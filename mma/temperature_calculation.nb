@@ -1,0 +1,1699 @@
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[TextData[{
+ "Finding ",
+ Cell[BoxData[
+  FormBox["b", TraditionalForm]]]
+}], "Section"],
+
+Cell[TextData[{
+ "We have ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{"C", "(", 
+     RowBox[{"T", ",", "0"}], ")"}], "=", 
+    RowBox[{"V", " ", 
+     RowBox[{"b", "/", 
+      SuperscriptBox["T", "2"]}]}]}], TraditionalForm]]],
+ " for ",
+ Cell[BoxData[
+  FormBox["C", TraditionalForm]]],
+ " the specific heat. The molar specific heat capacity is then ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{
+     SubscriptBox["C", "M"], "(", 
+     RowBox[{"T", ",", "0"}], ")"}], "=", 
+    RowBox[{
+     SubscriptBox["V", "M"], 
+     RowBox[{"b", "/", 
+      SuperscriptBox["T", "2"]}]}]}], TraditionalForm]]],
+ " for ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["V", "M"], TraditionalForm]]],
+ " the molar volume: ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    SubscriptBox["V", "M"], "=", 
+    RowBox[{
+     SubscriptBox["M", "M"], "/", "\[Rho]"}]}], TraditionalForm]]],
+ ". We are given ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{
+     SubscriptBox["C", "M"], "(", 
+     RowBox[{"T", ",", "0"}], ")"}], "/", "R"}], TraditionalForm]]],
+ ", so we rewrite this as ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{
+     RowBox[{
+      SubscriptBox["C", "M"], "(", 
+      RowBox[{"T", ",", "0"}], ")"}], "/", "R"}], "=", 
+    RowBox[{
+     SubscriptBox["V", "M"], 
+     RowBox[{"b", "/", 
+      RowBox[{"(", 
+       RowBox[{"R", " ", 
+        SuperscriptBox["T", "2"]}], ")"}]}]}]}], TraditionalForm]]],
+ "."
+}], "Text"],
+
+Cell[TextData[{
+ "First, let\[CloseCurlyQuote]s find ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["V", "M"], TraditionalForm]]],
+ ":"
+}], "Text"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"MM", "=", 
+   RowBox[{"499.40", 
+    NamespaceBox["LinguisticAssistant",
+     DynamicModuleBox[{WolframAlphaClient`Private`query$$ = 
+      "atomic mass unit", WolframAlphaClient`Private`boxes$$ = 
+      TemplateBox[{"1"}, "QuantityUnit", DisplayFunction -> (TooltipBox[
+         StyleBox[
+          RowBox[{#, "\[InvisibleSpace]", 
+            StyleBox[
+             RowBox[{" ", "\"u\""}], "QuantityUnitTraditionalLabel"]}], 
+          ShowStringCharacters -> False], 
+         "Unit: unified atomic mass units"]& ), 
+       InterpretationFunction -> (RowBox[{"Quantity", "[", 
+          RowBox[{#, ",", "\"AtomicMassUnit\""}], "]"}]& ), SyntaxForm -> 
+       Mod], WolframAlphaClient`Private`allassumptions$$ = {{
+       "type" -> "Clash", "word" -> "atomic mass unit", "template" -> 
+        "Assuming \"${word}\" is ${desc1}. Use as ${desc2} instead", "count" -> 
+        "3", "Values" -> {{
+          "name" -> "Unit", "desc" -> "a unit", "input" -> 
+           "*C.atomic+mass+unit-_*Unit-"}, {
+          "name" -> "PhysicalQuantity", "desc" -> "a physical quantity", 
+           "input" -> "*C.atomic+mass+unit-_*PhysicalQuantity-"}, {
+          "name" -> "Word", "desc" -> "a word", "input" -> 
+           "*C.atomic+mass+unit-_*Word-"}}}, {
+       "type" -> "Unit", "word" -> "atomic mass unit", "template" -> 
+        "Assuming ${desc1} for \"${word}\". Use ${desc2} instead", "count" -> 
+        "3", "Values" -> {{
+          "name" -> "AtomicMassUnit", "desc" -> "unified atomic mass unit", 
+           "input" -> "UnitClash_*atomic+mass+unit.*AtomicMassUnit--"}, {
+          "name" -> "AtomicMassUnitChemical", "desc" -> 
+           "atomic mass unit (chemical scale)", "input" -> 
+           "UnitClash_*atomic+mass+unit.*AtomicMassUnitChemical--"}, {
+          "name" -> "AtomicMassUnitPhysical", "desc" -> 
+           "atomic mass unit (physical scale)", "input" -> 
+           "UnitClash_*atomic+mass+unit.*AtomicMassUnitPhysical--"}}}}, 
+      WolframAlphaClient`Private`assumptions$$ = {}, 
+      WolframAlphaClient`Private`open$$ = {1, 2}}, 
+      DynamicBox[ToBoxes[
+        AlphaIntegration`LinguisticAssistantBoxes["", 1, 
+         Dynamic[WolframAlphaClient`Private`query$$], 
+         Dynamic[WolframAlphaClient`Private`boxes$$], 
+         Dynamic[WolframAlphaClient`Private`allassumptions$$], 
+         Dynamic[WolframAlphaClient`Private`assumptions$$], 
+         Dynamic[WolframAlphaClient`Private`open$$]], StandardForm],
+       ImageSizeCache->{160., {25., 31.}}],
+      DynamicModuleValues:>{}],
+     BaseStyle->{Deployed -> True},
+     DeleteWithContents->True,
+     Editable->False,
+     SelectWithContents->True], 
+    NamespaceBox["LinguisticAssistant",
+     DynamicModuleBox[{WolframAlphaClient`Private`query$$ = 
+      "avogadro's number", WolframAlphaClient`Private`boxes$$ = 
+      TemplateBox[{"1"}, "QuantityUnit", DisplayFunction -> (TooltipBox[
+         StyleBox[
+          RowBox[{#, "\[InvisibleSpace]", 
+            StyleBox[
+             RowBox[{" ", 
+               SubscriptBox[
+                StyleBox["\"N\"", Italic, StripOnInput -> False], 
+                StyleBox["\"A\"", Italic, StripOnInput -> False]]}], 
+             "QuantityUnitTraditionalLabel"]}], ShowStringCharacters -> 
+          False], "Unit: Avogadro numbers"]& ), 
+       InterpretationFunction -> (RowBox[{"Quantity", "[", 
+          RowBox[{#, ",", "\"AvogadroNumber\""}], "]"}]& ), SyntaxForm -> 
+       Mod], WolframAlphaClient`Private`allassumptions$$ = {}, 
+      WolframAlphaClient`Private`assumptions$$ = {}, 
+      WolframAlphaClient`Private`open$$ = {1, 2}}, 
+      DynamicBox[ToBoxes[
+        AlphaIntegration`LinguisticAssistantBoxes["", 1, 
+         Dynamic[WolframAlphaClient`Private`query$$], 
+         Dynamic[WolframAlphaClient`Private`boxes$$], 
+         Dynamic[WolframAlphaClient`Private`allassumptions$$], 
+         Dynamic[WolframAlphaClient`Private`assumptions$$], 
+         Dynamic[WolframAlphaClient`Private`open$$]], StandardForm],
+       ImageSizeCache->{171., {24., 30.}}],
+      DynamicModuleValues:>{}],
+     BaseStyle->{Deployed -> True},
+     DeleteWithContents->True,
+     Editable->False,
+     SelectWithContents->True]}]}], ";"}]], "Input"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"\[Rho]", "=", 
+   RowBox[{"1.7", 
+    RowBox[{
+     NamespaceBox["LinguisticAssistant",
+      DynamicModuleBox[{WolframAlphaClient`Private`query$$ = "gram", 
+       WolframAlphaClient`Private`boxes$$ = 
+       TemplateBox[{"1"}, "QuantityUnit", DisplayFunction -> (TooltipBox[
+          StyleBox[
+           RowBox[{#, "\[InvisibleSpace]", 
+             StyleBox[
+              RowBox[{" ", "\"g\""}], "QuantityUnitTraditionalLabel"]}], 
+           ShowStringCharacters -> False], "Unit: grams"]& ), 
+        InterpretationFunction -> (RowBox[{"Quantity", "[", 
+           RowBox[{#, ",", "\"Grams\""}], "]"}]& ), SyntaxForm -> Mod], 
+       WolframAlphaClient`Private`allassumptions$$ = {{
+        "type" -> "Clash", "word" -> "gram", "template" -> 
+         "Assuming \"${word}\" is ${desc1}. Use as ${desc2} instead", "count" -> 
+         "2", "Values" -> {{
+           "name" -> "Unit", "desc" -> "a unit", "input" -> 
+            "*C.gram-_*Unit-"}, {
+           "name" -> "Word", "desc" -> "a word", "input" -> 
+            "*C.gram-_*Word-"}}}, {
+        "type" -> "Unit", "word" -> "gram", "template" -> 
+         "Assuming ${desc1} for \"${word}\". Use ${desc2} instead", "count" -> 
+         "2", "Values" -> {{
+           "name" -> "Grams", "desc" -> "grams", "input" -> 
+            "UnitClash_*gram.*Grams--"}, {
+           "name" -> "GramsForce", "desc" -> "grams\[Hyphen]force", "input" -> 
+            "UnitClash_*gram.*GramsForce--"}}}}, 
+       WolframAlphaClient`Private`assumptions$$ = {}, 
+       WolframAlphaClient`Private`open$$ = {1, 2}}, 
+       DynamicBox[ToBoxes[
+         AlphaIntegration`LinguisticAssistantBoxes["", 1, 
+          Dynamic[WolframAlphaClient`Private`query$$], 
+          Dynamic[WolframAlphaClient`Private`boxes$$], 
+          Dynamic[WolframAlphaClient`Private`allassumptions$$], 
+          Dynamic[WolframAlphaClient`Private`assumptions$$], 
+          Dynamic[WolframAlphaClient`Private`open$$]], StandardForm],
+        ImageSizeCache->{85., {25., 31.}}],
+       DynamicModuleValues:>{}],
+      BaseStyle->{Deployed -> True},
+      DeleteWithContents->True,
+      Editable->False,
+      SelectWithContents->True], "/", 
+     NamespaceBox["LinguisticAssistant",
+      DynamicModuleBox[{WolframAlphaClient`Private`query$$ = 
+       "cubic centimeter", WolframAlphaClient`Private`boxes$$ = 
+       TemplateBox[{"1"}, "QuantityUnit", DisplayFunction -> (TooltipBox[
+          StyleBox[
+           RowBox[{#, "\[InvisibleSpace]", 
+             StyleBox[
+              RowBox[{" ", 
+                RowBox[{
+                  SuperscriptBox["\"cm\"", "3"]}]}], 
+              "QuantityUnitTraditionalLabel"]}], ShowStringCharacters -> 
+           False], "Unit: centimeters cubed"]& ), 
+        InterpretationFunction -> (RowBox[{"Quantity", "[", 
+           RowBox[{#, ",", 
+             SuperscriptBox["\"Centimeters\"", "3"]}], "]"}]& ), SyntaxForm -> 
+        Mod], WolframAlphaClient`Private`allassumptions$$ = {{
+        "type" -> "Clash", "word" -> "cubic centimeter", "template" -> 
+         "Assuming \"${word}\" is ${desc1}. Use as ${desc2} instead", "count" -> 
+         "2", "Values" -> {{
+           "name" -> "Unit", "desc" -> "a unit", "input" -> 
+            "*C.cubic+centimeter-_*Unit-"}, {
+           "name" -> "Word", "desc" -> "a word", "input" -> 
+            "*C.cubic+centimeter-_*Word-"}}}}, 
+       WolframAlphaClient`Private`assumptions$$ = {}, 
+       WolframAlphaClient`Private`open$$ = {1, 2}}, 
+       DynamicBox[ToBoxes[
+         AlphaIntegration`LinguisticAssistantBoxes["", 1, 
+          Dynamic[WolframAlphaClient`Private`query$$], 
+          Dynamic[WolframAlphaClient`Private`boxes$$], 
+          Dynamic[WolframAlphaClient`Private`allassumptions$$], 
+          Dynamic[WolframAlphaClient`Private`assumptions$$], 
+          Dynamic[WolframAlphaClient`Private`open$$]], StandardForm],
+        ImageSizeCache->{157., {26., 32.}}],
+       DynamicModuleValues:>{}],
+      BaseStyle->{Deployed -> True},
+      DeleteWithContents->True,
+      Editable->False,
+      SelectWithContents->True]}]}]}], ";"}]], "Input"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"VM", "=", 
+  RowBox[{"MM", "/", "\[Rho]"}]}]], "Input"],
+
+Cell[BoxData[
+ TemplateBox[{"293.7647058766583`"},
+  "QuantityUnit",
+  DisplayFunction->(TooltipBox[
+    StyleBox[
+     RowBox[{#, "\[InvisibleSpace]", 
+       StyleBox[
+        RowBox[{" ", 
+          RowBox[{
+            SuperscriptBox["\"cm\"", "3"]}]}], 
+        "QuantityUnitTraditionalLabel"]}], ShowStringCharacters -> False], 
+    "Unit: centimeters cubed"]& ),
+  InterpretationFunction->(RowBox[{"Quantity", "[", 
+     RowBox[{#, ",", 
+       SuperscriptBox["\"Centimeters\"", "3"]}], "]"}]& )]], "Output"]
+}, Open  ]],
+
+Cell["\<\
+We want a dimensionless temperature for the fitting, so we rewrite our \
+equation as\
+\>", "Text"],
+
+Cell[BoxData[
+ RowBox[{
+  FractionBox[
+   SubscriptBox["C", "M"], "R"], "\[Equal]", 
+  FractionBox[
+   RowBox[{
+    SubscriptBox["V", "M"], "b"}], 
+   RowBox[{"R", " ", 
+    SuperscriptBox[
+     RowBox[{"(", 
+      RowBox[{"T", " ", "K"}], ")"}], "2"]}]], "\[Equal]", 
+  RowBox[{
+   FractionBox[
+    RowBox[{
+     SubscriptBox["V", "M"], 
+     RowBox[{"(", 
+      RowBox[{"b", "/", 
+       SuperscriptBox["K", "2"]}], ")"}]}], "R"], 
+   FractionBox["1", 
+    SuperscriptBox["T", "2"]]}]}]], "Input"],
+
+Cell[TextData[{
+ "Thus, in fitting to ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"p", "/", 
+    SuperscriptBox["T", "2"]}], TraditionalForm]]],
+ ", we will really be solving for ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    SubscriptBox["V", "M"], 
+    RowBox[{"b", "/", 
+     RowBox[{"(", 
+      RowBox[{"R", " ", 
+       SuperscriptBox["K", "2"]}], ")"}]}]}], TraditionalForm]]],
+ ". Let\[CloseCurlyQuote]s do the fitting."
+}], "Text"],
+
+Cell[TextData[{
+ "Data points ( {",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{
+     RowBox[{"T", " ", "[", "K", "]"}], ",", 
+     RowBox[{
+      RowBox[{
+       SubscriptBox["C", "M"], "(", "T", ")"}], "/", "R"}]}], "}"}], 
+   TraditionalForm]]],
+ " ):"
+}], "Text"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"cmdata", "=", 
+    RowBox[{"{", "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{"0.2", ",", "0.26"}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"0.25", ",", "0.19"}], "}"}]}], "\[IndentingNewLine]", "}"}]}],
+    ";"}], " ", 
+  RowBox[{"(*", 
+   RowBox[{
+   "Using", " ", "only", " ", "two", " ", "data", " ", "points", " ", "to", 
+    " ", "stay", " ", "within", " ", "the", " ", "Curie", " ", "regime"}], 
+   "*)"}]}]], "Input"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"bDimless", "=", 
+  RowBox[{"Fit", "[", 
+   RowBox[{"cmdata", ",", 
+    RowBox[{"{", 
+     RowBox[{"1", "/", 
+      SuperscriptBox["T", "2"]}], "}"}], ",", "T"}], "]"}]}]], "Input"],
+
+Cell[BoxData[
+ FractionBox["0.010828603859250857`", 
+  SuperscriptBox["T", "2"]]], "Output"]
+}, Open  ]],
+
+Cell[TextData[{
+ "Now the real ",
+ Cell[BoxData[
+  FormBox["b", TraditionalForm]]],
+ " is the solution to "
+}], "Text"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Clear", "[", "b", "]"}], ";", 
+  RowBox[{"b", "=", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"(", 
+      RowBox[{"b", "/.", 
+       RowBox[{"Solve", "[", 
+        RowBox[{
+         RowBox[{"bDimless", "\[Equal]", 
+          FractionBox[
+           RowBox[{"VM", " ", "b"}], 
+           RowBox[{
+            NamespaceBox["LinguisticAssistant",
+             
+             DynamicModuleBox[{WolframAlphaClient`Private`query$$ = 
+              "gas constant", WolframAlphaClient`Private`boxes$$ = 
+              TemplateBox[{"1"}, "QuantityUnit", 
+               DisplayFunction -> (TooltipBox[
+                 StyleBox[
+                  RowBox[{#, "\[InvisibleSpace]", 
+                    StyleBox[
+                    RowBox[{" ", 
+                    StyleBox["\"R\"", Italic, StripOnInput -> False]}], 
+                    "QuantityUnitTraditionalLabel"]}], ShowStringCharacters -> 
+                  False], "Unit: molar gas constants"]& ), 
+               InterpretationFunction -> (RowBox[{"Quantity", "[", 
+                  RowBox[{#, ",", "\"MolarGasConstant\""}], "]"}]& ), 
+               SyntaxForm -> Mod], 
+              WolframAlphaClient`Private`allassumptions$$ = {{
+               "type" -> "Clash", "word" -> "gas constant", "template" -> 
+                "Assuming \"${word}\" is ${desc1}. Use as ${desc2} instead", 
+                "count" -> "2", 
+                "Values" -> {{
+                  "name" -> "Unit", "desc" -> "a unit", "input" -> 
+                   "*C.gas+constant-_*Unit-"}, {
+                  "name" -> "Word", "desc" -> "a word", "input" -> 
+                   "*C.gas+constant-_*Word-"}}}}, 
+              WolframAlphaClient`Private`assumptions$$ = {}, 
+              WolframAlphaClient`Private`open$$ = {1, 2}}, 
+              DynamicBox[ToBoxes[
+                AlphaIntegration`LinguisticAssistantBoxes["", 1, 
+                 Dynamic[WolframAlphaClient`Private`query$$], 
+                 Dynamic[WolframAlphaClient`Private`boxes$$], 
+                 Dynamic[WolframAlphaClient`Private`allassumptions$$], 
+                 Dynamic[WolframAlphaClient`Private`assumptions$$], 
+                 Dynamic[WolframAlphaClient`Private`open$$]], StandardForm],
+               ImageSizeCache->{133., {25., 31.}}],
+              DynamicModuleValues:>{}],
+             BaseStyle->{Deployed -> True},
+             DeleteWithContents->True,
+             Editable->False,
+             SelectWithContents->True], 
+            SuperscriptBox[
+             RowBox[{"Quantity", "[", 
+              RowBox[{"1", ",", "\"\<Kelvins\>\""}], "]"}], "2"]}]]}], ",", 
+         "b"}], "]"}]}], ")"}], "\[LeftDoubleBracket]", "1", 
+     "\[RightDoubleBracket]"}], 
+    SuperscriptBox["T", "2"]}]}]}]], "Input"],
+
+Cell[BoxData[
+ TemplateBox[{"306.48343583336106`"},
+  "QuantityUnit",
+  DisplayFunction->(TooltipBox[
+    StyleBox[
+     RowBox[{#, "\[InvisibleSpace]", 
+       StyleBox[
+        RowBox[{" ", 
+          
+          RowBox[{"\"kg\"", "\[ThinSpace]", "\"K\"", "\[InvisibleSpace]", 
+            "\"/(\"", "\[InvisibleSpace]", "\"m\"", "\[ThinSpace]", 
+            SuperscriptBox["\"s\"", "2"], "\[InvisibleSpace]", "\"mol\"", 
+            "\[InvisibleSpace]", "\")\""}]}], 
+        "QuantityUnitTraditionalLabel"]}], ShowStringCharacters -> False], 
+    "Unit: kilogram kelvins per meter second squared mole"]& ),
+  InterpretationFunction->(RowBox[{"Quantity", "[", 
+     RowBox[{#, ",", 
+       FractionBox[
+        RowBox[{"\"Kelvins\"", " ", "\"Kilograms\""}], 
+        RowBox[{"\"Meters\"", " ", "\"Moles\"", " ", 
+          SuperscriptBox["\"Seconds\"", "2"]}]]}], "]"}]& )]], "Output"]
+}, Open  ]],
+
+Cell[TextData[{
+ "The Quantity statement is necessary to prevent ",
+ StyleBox["Mathematica",
+  FontSlant->"Italic"],
+ " from getting confused about Kelvins versus Kelvins difference, which is \
+sort of pathetic."
+}], "Text"],
+
+Cell["Quick unit check:", "Text"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ FractionBox[
+  RowBox[{"VM", " ", "b"}], 
+  RowBox[{
+   NamespaceBox["LinguisticAssistant",
+    DynamicModuleBox[{WolframAlphaClient`Private`query$$ = "gas constant", 
+     WolframAlphaClient`Private`boxes$$ = 
+     TemplateBox[{"1"}, "QuantityUnit", DisplayFunction -> (TooltipBox[
+        StyleBox[
+         RowBox[{#, "\[InvisibleSpace]", 
+           StyleBox[
+            RowBox[{" ", 
+              StyleBox["\"R\"", Italic, StripOnInput -> False]}], 
+            "QuantityUnitTraditionalLabel"]}], ShowStringCharacters -> False],
+         "Unit: molar gas constants"]& ), 
+      InterpretationFunction -> (RowBox[{"Quantity", "[", 
+         RowBox[{#, ",", "\"MolarGasConstant\""}], "]"}]& ), SyntaxForm -> 
+      Mod], WolframAlphaClient`Private`allassumptions$$ = {{
+      "type" -> "Clash", "word" -> "gas constant", "template" -> 
+       "Assuming \"${word}\" is ${desc1}. Use as ${desc2} instead", "count" -> 
+       "2", "Values" -> {{
+         "name" -> "Unit", "desc" -> "a unit", "input" -> 
+          "*C.gas+constant-_*Unit-"}, {
+         "name" -> "Word", "desc" -> "a word", "input" -> 
+          "*C.gas+constant-_*Word-"}}}}, 
+     WolframAlphaClient`Private`assumptions$$ = {}, 
+     WolframAlphaClient`Private`open$$ = {1, 2}}, 
+     DynamicBox[ToBoxes[
+       AlphaIntegration`LinguisticAssistantBoxes["", 1, 
+        Dynamic[WolframAlphaClient`Private`query$$], 
+        Dynamic[WolframAlphaClient`Private`boxes$$], 
+        Dynamic[WolframAlphaClient`Private`allassumptions$$], 
+        Dynamic[WolframAlphaClient`Private`assumptions$$], 
+        Dynamic[WolframAlphaClient`Private`open$$]], StandardForm],
+      ImageSizeCache->{133., {25., 31.}}],
+     DynamicModuleValues:>{}],
+    BaseStyle->{Deployed -> True},
+    DeleteWithContents->True,
+    Editable->False,
+    SelectWithContents->True], " ", 
+   SuperscriptBox[
+    RowBox[{"Quantity", "[", 
+     RowBox[{"1", ",", "\"\<Kelvins\>\""}], "]"}], "2"]}]]], "Input"],
+
+Cell[BoxData["0.010828603859250857`"], "Output"]
+}, Open  ]],
+
+Cell["This is dimensionless\[LongDash]good.", "Text"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "Finding ",
+ Cell[BoxData[
+  FormBox["a", TraditionalForm]]]
+}], "Section"],
+
+Cell[TextData[{
+ "I think\[LongDash]and I could be wrong\[LongDash]that ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"T", "\[TildeTilde]", 
+    SuperscriptBox["T", "*"]}], TraditionalForm]]],
+ " at higher temperatures (relative to the Curie temperature). If that\
+\[CloseCurlyQuote]s correct, then the first few rows of table 1 are useful: \
+from the bottom of 451 in Reif, we should have "
+}], "Text"],
+
+Cell[BoxData[
+ RowBox[{
+  FractionBox[
+   SuperscriptBox["T", "*"], 
+   SubscriptBox["T", "i"]], "\[Equal]", 
+  SuperscriptBox[
+   RowBox[{"(", 
+    FractionBox[
+     RowBox[{"b", "+", 
+      RowBox[{"a", " ", 
+       SubsuperscriptBox["H", "f", "2"]}]}], 
+     RowBox[{"b", "+", 
+      RowBox[{"a", " ", 
+       SubsuperscriptBox["H", "i", "2"]}]}]], ")"}], 
+   RowBox[{"1", "/", "2"}]]}]], "Input"],
+
+Cell[TextData[{
+ "Here\[CloseCurlyQuote]s the table of ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"(", 
+    RowBox[{
+     RowBox[{
+      SubscriptBox["T", "i"], " ", "[", "K", "]"}], ",", 
+     RowBox[{
+      SuperscriptBox["T", "*"], " ", "[", "K", "]"}], ",", 
+     RowBox[{
+      SubscriptBox["H", "i"], " ", "[", "kG", "]"}]}], ")"}], 
+   TraditionalForm]]],
+ ":"
+}], "Text"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"httdata", "=", 
+   RowBox[{"{", "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"0.983", ",", "0.591", ",", "1.198"}], "}"}], ",", 
+     "\[IndentingNewLine]", 
+     RowBox[{"{", 
+      RowBox[{"0.977", ",", "0.461", ",", "1.675"}], "}"}], ",", 
+     "\[IndentingNewLine]", 
+     RowBox[{"{", 
+      RowBox[{"0.970", ",", "0.461", ",", "2.35"}], "}"}], ",", 
+     "\[IndentingNewLine]", 
+     RowBox[{"{", 
+      RowBox[{"0.972", ",", "0.264", ",", "3.14"}], "}"}], ",", 
+     "\[IndentingNewLine]", 
+     RowBox[{"{", 
+      RowBox[{"0.973", ",", "0.214", ",", "3.76"}], "}"}]}], 
+    "\[IndentingNewLine]", "}"}]}], ";"}]], "Input"],
+
+Cell[TextData[{
+ "I\[CloseCurlyQuote]ll use the table down to 0.2 K, as I don\
+\[CloseCurlyQuote]t trust this beyond there. Assume ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    SubscriptBox["H", "f"], "=", "0"}], TraditionalForm]]],
+ "."
+}], "Text"],
+
+Cell["\<\
+We need to correct the dimensions somewhat, because we need to supply \
+something dimensionless to FindFit. Primarily, note that since \
+\>", "Text"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"bUnits", "=", 
+  RowBox[{"QuantityUnit", "[", "b", "]"}]}]], "Input"],
+
+Cell[BoxData[
+ FractionBox[
+  RowBox[{"\<\"Kelvins\"\>", " ", "\<\"Kilograms\"\>"}], 
+  RowBox[{"\<\"Meters\"\>", " ", "\<\"Moles\"\>", " ", 
+   SuperscriptBox["\<\"Seconds\"\>", "2"]}]]], "Output"]
+}, Open  ]],
+
+Cell["We can divide off the units and write ", "Text"],
+
+Cell[BoxData[
+ RowBox[{
+  SuperscriptBox[
+   RowBox[{"(", 
+    FractionBox["b", 
+     RowBox[{"b", "+", 
+      RowBox[{"a", " ", 
+       SuperscriptBox["Hi", "2"]}]}]], ")"}], 
+   RowBox[{"1", "/", "2"}]], "\[Equal]", 
+  SuperscriptBox[
+   RowBox[{"(", 
+    FractionBox[
+     RowBox[{"QuantityMagnitude", "[", "b", "]"}], 
+     RowBox[{
+      RowBox[{"QuantityMagnitude", "[", "b", "]"}], "+", 
+      RowBox[{
+       FractionBox["a", "bUnits"], " ", 
+       SuperscriptBox[
+        RowBox[{"(", 
+         RowBox[{"Hi", " ", "kG"}], ")"}], "2"]}]}]], ")"}], 
+   RowBox[{"1", "/", "2"}]]}]], "Input"],
+
+Cell[BoxData[
+ RowBox[{
+  SuperscriptBox[
+   RowBox[{"(", 
+    FractionBox["b", 
+     RowBox[{"b", "+", 
+      RowBox[{"a", " ", 
+       SuperscriptBox["Hi", "2"]}]}]], ")"}], 
+   RowBox[{"1", "/", "2"}]], "\[Equal]", 
+  SuperscriptBox[
+   RowBox[{"(", 
+    FractionBox[
+     RowBox[{"QuantityMagnitude", "[", "b", "]"}], 
+     RowBox[{
+      RowBox[{"QuantityMagnitude", "[", "b", "]"}], "+", 
+      RowBox[{
+       FractionBox[
+        RowBox[{"a", " ", 
+         SuperscriptBox["kG", "2"]}], "bUnits"], " ", 
+       SuperscriptBox["Hi", "2"]}]}]], ")"}], 
+   RowBox[{"1", "/", "2"}]]}]], "Input"],
+
+Cell[TextData[{
+ "We will pretend that the coefficient of ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["H", "i"], TraditionalForm]]],
+ " is ",
+ Cell[BoxData[
+  FormBox["a", TraditionalForm]]],
+ ", but really we will be solving for ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"a", " ", 
+    RowBox[{
+     SuperscriptBox["kG", "2"], "/", 
+     RowBox[{"(", "bUnits", ")"}]}]}], TraditionalForm]]],
+ "."
+}], "Text"],
+
+Cell[TextData[{
+ "Before we FindFit, we\[CloseCurlyQuote]ll need to get an approximate idea \
+of what ",
+ Cell[BoxData[
+  FormBox["a", TraditionalForm]]],
+ " should be so that we can provide a reasonable initial value. To make this \
+work, I\[CloseCurlyQuote]ve multiplied ",
+ Cell[BoxData[
+  FormBox["a", TraditionalForm]]],
+ " by ",
+ Cell[BoxData[
+  FormBox[
+   SuperscriptBox["10", 
+    RowBox[{"-", "6"}]], TraditionalForm]]],
+ ", which means we need to keep track of that as part of its units."
+}], "Text"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Manipulate", "[", 
+  RowBox[{
+   RowBox[{"Show", "[", 
+    RowBox[{
+     RowBox[{"Plot", "[", 
+      RowBox[{
+       SuperscriptBox[
+        RowBox[{"(", 
+         FractionBox[
+          RowBox[{"QuantityMagnitude", "[", "b", "]"}], 
+          RowBox[{
+           RowBox[{"QuantityMagnitude", "[", "b", "]"}], "+", 
+           RowBox[{
+            SuperscriptBox["10", "6"], "a", " ", 
+            SuperscriptBox["Hi", "2"]}]}]], ")"}], 
+        RowBox[{"1", "/", "2"}]], ",", 
+       RowBox[{"{", 
+        RowBox[{"Hi", ",", "0", ",", "4"}], "}"}]}], "]"}], ",", 
+     RowBox[{"ListPlot", "[", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"#", "\[LeftDoubleBracket]", "3", "\[RightDoubleBracket]"}],
+           ",", 
+          RowBox[{
+           RowBox[{
+           "#", "\[LeftDoubleBracket]", "2", "\[RightDoubleBracket]"}], "/", 
+           RowBox[{
+           "#", "\[LeftDoubleBracket]", "1", "\[RightDoubleBracket]"}]}]}], 
+         "}"}], "&"}], "/@", "httdata"}], "]"}]}], "]"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"a", ",", "0", ",", "0.001"}], "}"}]}], "]"}]], "Input"],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`a$$ = 0.00030399999999999996`, 
+    Typeset`show$$ = True, Typeset`bookmarkList$$ = {}, 
+    Typeset`bookmarkMode$$ = "Menu", Typeset`animator$$, Typeset`animvar$$ = 
+    1, Typeset`name$$ = "\"untitled\"", Typeset`specs$$ = {{
+      Hold[$CellContext`a$$], 0, 0.001}}, Typeset`size$$ = {
+    360., {112., 116.}}, Typeset`update$$ = 0, Typeset`initDone$$, 
+    Typeset`skipInitDone$$ = True, $CellContext`a$256960$$ = 0}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, "Variables" :> {$CellContext`a$$ = 0}, 
+      "ControllerVariables" :> {
+        Hold[$CellContext`a$$, $CellContext`a$256960$$, 0]}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, "Body" :> Show[
+        Plot[(QuantityMagnitude[$CellContext`b]/(
+          QuantityMagnitude[$CellContext`b] + (
+            10^6 $CellContext`a$$) $CellContext`Hi^2))^(1/
+          2), {$CellContext`Hi, 0, 4}], 
+        ListPlot[
+         Map[{
+           Part[#, 3], Part[#, 2]/Part[#, 1]}& , $CellContext`httdata]]], 
+      "Specifications" :> {{$CellContext`a$$, 0, 0.001}}, "Options" :> {}, 
+      "DefaultOptions" :> {}],
+     ImageSizeCache->{405., {156., 161.}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    SynchronousInitialization->True,
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output"]
+}, Open  ]],
+
+Cell[TextData[{
+ "From this, it looks like ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"a", "\[TildeTilde]", "0.0003"}], TraditionalForm]]],
+ "."
+}], "Text"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"aDimless", "=", 
+  RowBox[{"a", "/.", 
+   RowBox[{"FindFit", "[", 
+    RowBox[{
+     RowBox[{
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"#", "\[LeftDoubleBracket]", "3", "\[RightDoubleBracket]"}], 
+         ",", 
+         RowBox[{
+          RowBox[{"#", "\[LeftDoubleBracket]", "2", "\[RightDoubleBracket]"}],
+           "/", 
+          RowBox[{
+          "#", "\[LeftDoubleBracket]", "1", "\[RightDoubleBracket]"}]}]}], 
+        "}"}], "&"}], "/@", "httdata"}], ",", 
+     SuperscriptBox[
+      RowBox[{"(", 
+       FractionBox[
+        RowBox[{"QuantityMagnitude", "[", "b", "]"}], 
+        RowBox[{
+         RowBox[{"QuantityMagnitude", "[", "b", "]"}], "+", 
+         RowBox[{
+          SuperscriptBox["10", "6"], "a", " ", 
+          SuperscriptBox["Hi", "2"]}]}]], ")"}], 
+      RowBox[{"1", "/", "2"}]], ",", 
+     RowBox[{"{", 
+      RowBox[{"{", 
+       RowBox[{"a", ",", "0.00003"}], "}"}], "}"}], ",", "Hi"}], 
+    "]"}]}]}]], "Input"],
+
+Cell[BoxData["0.0003314474228106899`"], "Output"]
+}, Open  ]],
+
+Cell[TextData[{
+ "Of course, then the real ",
+ Cell[BoxData[
+  FormBox["a", TraditionalForm]]],
+ " is given by solving"
+}], "Text"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Clear", "[", "a", "]"}], ";", 
+  RowBox[{"a", "=", 
+   RowBox[{"a", "/.", 
+    RowBox[{
+     RowBox[{"Solve", "[", 
+      RowBox[{
+       RowBox[{
+        FractionBox[
+         RowBox[{"a", " ", 
+          SuperscriptBox[
+           NamespaceBox["LinguisticAssistant",
+            
+            DynamicModuleBox[{WolframAlphaClient`Private`query$$ = 
+             "kilogauss", WolframAlphaClient`Private`boxes$$ = 
+             TemplateBox[{"1"}, "QuantityUnit", DisplayFunction -> (TooltipBox[
+                StyleBox[
+                 RowBox[{#, "\[InvisibleSpace]", 
+                   StyleBox[
+                    RowBox[{" ", "\"kG\""}], 
+                    "QuantityUnitTraditionalLabel"]}], ShowStringCharacters -> 
+                 False], "Unit: kilogauss"]& ), 
+              InterpretationFunction -> (RowBox[{"Quantity", "[", 
+                 RowBox[{#, ",", "\"Kilogausses\""}], "]"}]& ), SyntaxForm -> 
+              Mod], WolframAlphaClient`Private`allassumptions$$ = {}, 
+             WolframAlphaClient`Private`assumptions$$ = {}, 
+             WolframAlphaClient`Private`open$$ = {1, 2}}, 
+             DynamicBox[ToBoxes[
+               AlphaIntegration`LinguisticAssistantBoxes["", 1, 
+                Dynamic[WolframAlphaClient`Private`query$$], 
+                Dynamic[WolframAlphaClient`Private`boxes$$], 
+                Dynamic[WolframAlphaClient`Private`allassumptions$$], 
+                Dynamic[WolframAlphaClient`Private`assumptions$$], 
+                Dynamic[WolframAlphaClient`Private`open$$]], StandardForm],
+              ImageSizeCache->{110., {24., 30.}}],
+             DynamicModuleValues:>{}],
+            BaseStyle->{Deployed -> True},
+            DeleteWithContents->True,
+            Editable->False,
+            SelectWithContents->True], "2"]}], 
+         RowBox[{"b", "/", 
+          RowBox[{"QuantityMagnitude", "[", "b", "]"}]}]], "\[Equal]", 
+        RowBox[{
+         SuperscriptBox["10", "6"], "aDimless"}]}], ",", "a"}], "]"}], 
+     "\[LeftDoubleBracket]", "1", "\[RightDoubleBracket]"}]}]}]}]], "Input"],
+
+Cell[BoxData[
+ TemplateBox[{"33144.74228106899`"},
+  "QuantityUnit",
+  DisplayFunction->(TooltipBox[
+    StyleBox[
+     RowBox[{#, "\[InvisibleSpace]", 
+       StyleBox[
+        RowBox[{" ", 
+          RowBox[{
+            SuperscriptBox["\"s\"", "2"], "\[InvisibleSpace]", 
+            SuperscriptBox["\"A\"", "2"], "\[InvisibleSpace]", "\"K\"", 
+            "\[InvisibleSpace]", "\"/(\"", "\[InvisibleSpace]", "\"kg\"", 
+            "\[ThinSpace]", "\"m\"", "\[ThinSpace]", "\"mol\"", 
+            "\[InvisibleSpace]", "\")\""}]}], 
+        "QuantityUnitTraditionalLabel"]}], ShowStringCharacters -> False], 
+    "Unit: second squared ampere squared kelvins per kilogram meter mole"]& ),
+  
+  InterpretationFunction->(RowBox[{"Quantity", "[", 
+     RowBox[{#, ",", 
+       FractionBox[
+        RowBox[{
+          SuperscriptBox["\"Amperes\"", "2"], " ", "\"Kelvins\"", " ", 
+          SuperscriptBox["\"Seconds\"", "2"]}], 
+        RowBox[{"\"Kilograms\"", " ", "\"Meters\"", " ", "\"Moles\""}]]}], 
+     "]"}]& )]], "Output"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Minimum temperature", "Section"],
+
+Cell["\<\
+Assuming this model works out, we can plot the minimum temperature (starting \
+from 1.5 K) as a function of the initial magnetic field. First, let\
+\[CloseCurlyQuote]s do a quick verification:\
+\>", "Text"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   SubscriptBox["T", "f"], "\[Equal]", 
+   RowBox[{
+    SuperscriptBox[
+     RowBox[{"(", 
+      FractionBox["b", 
+       RowBox[{"b", "+", 
+        RowBox[{"a", " ", 
+         SuperscriptBox[
+          RowBox[{"(", 
+           RowBox[{"Hi", 
+            NamespaceBox["LinguisticAssistant",
+             
+             DynamicModuleBox[{WolframAlphaClient`Private`query$$ = 
+              "kilogauss", WolframAlphaClient`Private`boxes$$ = 
+              TemplateBox[{"1"}, "QuantityUnit", 
+               DisplayFunction -> (TooltipBox[
+                 StyleBox[
+                  RowBox[{#, "\[InvisibleSpace]", 
+                    StyleBox[
+                    RowBox[{" ", "\"kG\""}], 
+                    "QuantityUnitTraditionalLabel"]}], ShowStringCharacters -> 
+                  False], "Unit: kilogauss"]& ), 
+               InterpretationFunction -> (RowBox[{"Quantity", "[", 
+                  RowBox[{#, ",", "\"Kilogausses\""}], "]"}]& ), SyntaxForm -> 
+               Mod], WolframAlphaClient`Private`allassumptions$$ = {}, 
+              WolframAlphaClient`Private`assumptions$$ = {}, 
+              WolframAlphaClient`Private`open$$ = {1, 2}}, 
+              DynamicBox[ToBoxes[
+                AlphaIntegration`LinguisticAssistantBoxes["", 1, 
+                 Dynamic[WolframAlphaClient`Private`query$$], 
+                 Dynamic[WolframAlphaClient`Private`boxes$$], 
+                 Dynamic[WolframAlphaClient`Private`allassumptions$$], 
+                 Dynamic[WolframAlphaClient`Private`assumptions$$], 
+                 Dynamic[WolframAlphaClient`Private`open$$]], StandardForm],
+               ImageSizeCache->{110., {24., 30.}}],
+              DynamicModuleValues:>{}],
+             BaseStyle->{Deployed -> True},
+             DeleteWithContents->True,
+             Editable->False,
+             SelectWithContents->True]}], ")"}], "2"]}]}]], ")"}], 
+     RowBox[{"1", "/", "2"}]], 
+    NamespaceBox["LinguisticAssistant",
+     DynamicModuleBox[{WolframAlphaClient`Private`query$$ = "1 kelvin", 
+      WolframAlphaClient`Private`boxes$$ = 
+      TemplateBox[{"1"}, "QuantityUnit", DisplayFunction -> (TooltipBox[
+         StyleBox[
+          RowBox[{#, "\[InvisibleSpace]", 
+            StyleBox[
+             RowBox[{" ", "\"K\""}], "QuantityUnitTraditionalLabel"]}], 
+          ShowStringCharacters -> False], "Unit: kelvins"]& ), 
+       InterpretationFunction -> (RowBox[{"Quantity", "[", 
+          RowBox[{#, ",", "\"Kelvins\""}], "]"}]& ), SyntaxForm -> Mod], 
+      WolframAlphaClient`Private`allassumptions$$ = {{
+       "type" -> "Unit", "word" -> "kelvin", "template" -> 
+        "Assuming ${desc1} for \"${word}\". Use ${desc2} instead", "count" -> 
+        "2", "Values" -> {{
+          "name" -> "Kelvins", "desc" -> "kelvins of absolute temperature", 
+           "input" -> "UnitClash_*kelvin.*Kelvins--"}, {
+          "name" -> "KelvinsDifference", "desc" -> "kelvins difference", 
+           "input" -> "UnitClash_*kelvin.*KelvinsDifference--"}}}}, 
+      WolframAlphaClient`Private`assumptions$$ = {}, 
+      WolframAlphaClient`Private`open$$ = {1, 2}}, 
+      DynamicBox[ToBoxes[
+        AlphaIntegration`LinguisticAssistantBoxes["", 1, 
+         Dynamic[WolframAlphaClient`Private`query$$], 
+         Dynamic[WolframAlphaClient`Private`boxes$$], 
+         Dynamic[WolframAlphaClient`Private`allassumptions$$], 
+         Dynamic[WolframAlphaClient`Private`assumptions$$], 
+         Dynamic[WolframAlphaClient`Private`open$$]], StandardForm],
+       ImageSizeCache->{101., {25., 31.}}],
+      DynamicModuleValues:>{}],
+     BaseStyle->{Deployed -> True},
+     DeleteWithContents->True,
+     Editable->False,
+     SelectWithContents->True]}]}], "/.", 
+  RowBox[{"{", 
+   RowBox[{"Hi", "\[Rule]", "1.675"}], "}"}]}]], "Input"],
+
+Cell[BoxData[
+ RowBox[{
+  SubscriptBox["T", "f"], "\[Equal]", 
+  TemplateBox[{"0.4978791027844027`"},
+   "QuantityUnit",
+   DisplayFunction->(TooltipBox[
+     StyleBox[
+      RowBox[{#, "\[InvisibleSpace]", 
+        StyleBox[
+         RowBox[{" ", "\"K\""}], "QuantityUnitTraditionalLabel"]}], 
+      ShowStringCharacters -> False], "Unit: kelvins"]& ),
+   InterpretationFunction->(RowBox[{"Quantity", "[", 
+      RowBox[{#, ",", "\"Kelvins\""}], "]"}]& )]}]], "Output"]
+}, Open  ]],
+
+Cell["This is about what the paper reports.", "Text"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"minT", "[", "Hi_", "]"}], ":=", 
+  RowBox[{"QuantityMagnitude", "[", 
+   RowBox[{
+    SuperscriptBox[
+     RowBox[{"(", 
+      FractionBox["b", 
+       RowBox[{"b", "+", 
+        RowBox[{"a", " ", 
+         SuperscriptBox[
+          RowBox[{"(", 
+           RowBox[{"Hi", 
+            NamespaceBox["LinguisticAssistant",
+             
+             DynamicModuleBox[{WolframAlphaClient`Private`query$$ = "tesla", 
+              WolframAlphaClient`Private`boxes$$ = 
+              TemplateBox[{"1"}, "QuantityUnit", 
+               DisplayFunction -> (TooltipBox[
+                 StyleBox[
+                  RowBox[{#, "\[InvisibleSpace]", 
+                    StyleBox[
+                    RowBox[{" ", "\"T\""}], "QuantityUnitTraditionalLabel"]}],
+                   ShowStringCharacters -> False], "Unit: teslas"]& ), 
+               InterpretationFunction -> (RowBox[{"Quantity", "[", 
+                  RowBox[{#, ",", "\"Teslas\""}], "]"}]& ), SyntaxForm -> 
+               Mod], WolframAlphaClient`Private`allassumptions$$ = {{
+               "type" -> "Clash", "word" -> "tesla", "template" -> 
+                "Assuming \"${word}\" is ${desc1}. Use as ${desc2} instead", 
+                "count" -> "5", 
+                "Values" -> {{
+                  "name" -> "Unit", "desc" -> "a unit", "input" -> 
+                   "*C.tesla-_*Unit-"}, {
+                  "name" -> "Person", "desc" -> "a person", "input" -> 
+                   "*C.tesla-_*Person-"}, {
+                  "name" -> "Financial", "desc" -> "a financial entity", 
+                   "input" -> "*C.tesla-_*Financial-"}, {
+                  "name" -> "SolarSystemFeature", "desc" -> 
+                   "a solar system feature", "input" -> 
+                   "*C.tesla-_*SolarSystemFeature-"}, {
+                  "name" -> "Word", "desc" -> "a word", "input" -> 
+                   "*C.tesla-_*Word-"}}}}, 
+              WolframAlphaClient`Private`assumptions$$ = {"*C.tesla-_*Unit-"},
+               WolframAlphaClient`Private`open$$ = {1, 2}}, 
+              DynamicBox[ToBoxes[
+                AlphaIntegration`LinguisticAssistantBoxes["", 1, 
+                 Dynamic[WolframAlphaClient`Private`query$$], 
+                 Dynamic[WolframAlphaClient`Private`boxes$$], 
+                 Dynamic[WolframAlphaClient`Private`allassumptions$$], 
+                 Dynamic[WolframAlphaClient`Private`assumptions$$], 
+                 Dynamic[WolframAlphaClient`Private`open$$]], StandardForm],
+               ImageSizeCache->{83., {25., 31.}}],
+              DynamicModuleValues:>{}],
+             BaseStyle->{Deployed -> True},
+             DeleteWithContents->True,
+             Editable->False,
+             SelectWithContents->True]}], ")"}], "2"]}]}]], ")"}], 
+     RowBox[{"1", "/", "2"}]], 
+    NamespaceBox["LinguisticAssistant",
+     DynamicModuleBox[{WolframAlphaClient`Private`query$$ = "1.5 kelvin", 
+      WolframAlphaClient`Private`boxes$$ = 
+      TemplateBox[{"1.5"}, "QuantityUnit", DisplayFunction -> (TooltipBox[
+         StyleBox[
+          RowBox[{#, "\[InvisibleSpace]", 
+            StyleBox[
+             RowBox[{" ", "\"K\""}], "QuantityUnitTraditionalLabel"]}], 
+          ShowStringCharacters -> False], "Unit: kelvins"]& ), 
+       InterpretationFunction -> (RowBox[{"Quantity", "[", 
+          RowBox[{#, ",", "\"Kelvins\""}], "]"}]& ), SyntaxForm -> Mod], 
+      WolframAlphaClient`Private`allassumptions$$ = {{
+       "type" -> "Unit", "word" -> "kelvin", "template" -> 
+        "Assuming ${desc1} for \"${word}\". Use ${desc2} instead", "count" -> 
+        "2", "Values" -> {{
+          "name" -> "Kelvins", "desc" -> "kelvins of absolute temperature", 
+           "input" -> "UnitClash_*kelvin.*Kelvins--"}, {
+          "name" -> "KelvinsDifference", "desc" -> "kelvins difference", 
+           "input" -> "UnitClash_*kelvin.*KelvinsDifference--"}}}}, 
+      WolframAlphaClient`Private`assumptions$$ = {}, 
+      WolframAlphaClient`Private`open$$ = {1, 2}}, 
+      DynamicBox[ToBoxes[
+        AlphaIntegration`LinguisticAssistantBoxes["", 1, 
+         Dynamic[WolframAlphaClient`Private`query$$], 
+         Dynamic[WolframAlphaClient`Private`boxes$$], 
+         Dynamic[WolframAlphaClient`Private`allassumptions$$], 
+         Dynamic[WolframAlphaClient`Private`assumptions$$], 
+         Dynamic[WolframAlphaClient`Private`open$$]], StandardForm],
+       ImageSizeCache->{112., {25., 31.}}],
+      DynamicModuleValues:>{}],
+     BaseStyle->{Deployed -> True},
+     DeleteWithContents->True,
+     Editable->False,
+     SelectWithContents->True]}], "]"}]}]], "Input"],
+
+Cell["\<\
+Plot will freak out about the QuantityMagnitude, so let\[CloseCurlyQuote]s \
+define the sampling points explicitly:\
+\>", "Text"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Tpoints", "=", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"#", ",", 
+       RowBox[{"minT", "[", "#", "]"}]}], "}"}], "&"}], "/@", 
+    RowBox[{"Table", "[", 
+     RowBox[{"Hi", ",", 
+      RowBox[{"{", 
+       RowBox[{"Hi", ",", "0", ",", "4", ",", "0.1"}], "}"}]}], "]"}]}]}], 
+  ";"}]], "Input"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"ListLogPlot", "[", 
+  RowBox[{"Tpoints", ",", 
+   RowBox[{"Joined", "\[Rule]", "True"}], ",", 
+   RowBox[{"PlotRange", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{"0.01", ",", "1.5"}], "}"}]}], ",", 
+   RowBox[{"AxesLabel", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{
+     "\"\<\!\(\*SubscriptBox[\(H\), \(i\)]\) [T]\>\"", ",", 
+      "\"\<\!\(\*SubscriptBox[\(T\), \(f\)]\) [K]\>\""}], "}"}]}]}], 
+  "]"}]], "Input"],
+
+Cell[BoxData[
+ GraphicsBox[{{{}, {}, 
+    {Hue[0.67, 0.6, 0.6], LineBox[CompressedData["
+1:eJxTTMoPSmViYGDQBGIQDQPuM/a/Uf58037WTBDYaS/z/0LR03eLofyT9ue2
+5FY2T7q938QYBC7b35VeZjj9/4v9EPmb9txFzGkvj3zYDzHtgb1I2pHJlnpf
+oOof2z/ZPcNmEtP3/elpIPDMfurfYoagnJ9Q/S/tX4RavY9q+73/7BkQeGPP
+VdL/cGXSX6h5H+zz5CyvXuL9D1X/0X7OvolWVR4MByDmf7aPsPnRlP+T4QBE
+/xf7LU5r01LnMB6A2PfNnmU3x940Y6YDEPN+2D/6Ja4jcoDpAMS8n/Za8S/+
+7HNmhpr32z689M+/6v3MUPP+2Nu7OCkZmrBAzftnf/nAmZL5i1ig5jE4CG5R
+np3FzQpVz+AgyXqiRi6fFWo+o4Orje1i43OsUP1MDue+ui4W0mSD2sfsMGWu
+xzmxBjaoeSwOiu0xERMus0HNY3G4PjNf+JgyO9Q8VodlHTXXvxWwQ81jc3hm
+f2Bl1G52qHnsDkk7GzYoM3NAzeNwCG449rfOgwNqHofDllJey6ndHFDzOB2S
+b+nodZ/hgJrH5VDYm+DWxM0JNY/bQTYx4v0MD06oeTwOFUWZn181c0LN43G4
+V5h4dOJeTqh5vA5zDzMeWvKVE2oen8NSixMZljpcUPP4HQKuxPUmJ3JBzRNw
+qFE/32Q6lesAAAtsH78=
+      "]]}}, {}},
+  AspectRatio->NCache[GoldenRatio^(-1), 0.6180339887498948],
+  Axes->True,
+  AxesLabel->{
+    FormBox[
+    "\"\\!\\(\\*SubscriptBox[\\(H\\), \\(i\\)]\\) [T]\"", TraditionalForm], 
+    FormBox[
+    "\"\\!\\(\\*SubscriptBox[\\(T\\), \\(f\\)]\\) [K]\"", TraditionalForm]},
+  AxesOrigin->{0., -4.605170185988091},
+  CoordinatesToolOptions:>{"DisplayFunction" -> ({
+      Part[#, 1], 
+      Exp[
+       Part[#, 2]]}& ), "CopiedValueFunction" -> ({
+      Part[#, 1], 
+      Exp[
+       Part[#, 2]]}& )},
+  FrameTicks->{{{{-4.605170185988092, 
+       FormBox[
+        TagBox[
+         InterpretationBox["\"0.01\"", 0.01, AutoDelete -> True], 
+         NumberForm[#, {
+           DirectedInfinity[1], 2}, NumberPadding -> {"", "0"}]& ], 
+        TraditionalForm]}, {-3.912023005428146, 
+       FormBox[
+        TagBox[
+         InterpretationBox["\"0.02\"", 0.02, AutoDelete -> True], 
+         NumberForm[#, {
+           DirectedInfinity[1], 2}, NumberPadding -> {"", "0"}]& ], 
+        TraditionalForm]}, {-2.995732273553991, 
+       FormBox[
+        TagBox[
+         InterpretationBox["\"0.05\"", 0.05, AutoDelete -> True], 
+         NumberForm[#, {
+           DirectedInfinity[1], 2}, NumberPadding -> {"", "0"}]& ], 
+        TraditionalForm]}, {-2.302585092994046, 
+       FormBox[
+        TagBox[
+         InterpretationBox["\"0.10\"", 0.1, AutoDelete -> True], 
+         NumberForm[#, {
+           DirectedInfinity[1], 2}, NumberPadding -> {"", "0"}]& ], 
+        TraditionalForm]}, {-1.6094379124341003`, 
+       FormBox[
+        TagBox[
+         InterpretationBox["\"0.20\"", 0.2, AutoDelete -> True], 
+         NumberForm[#, {
+           DirectedInfinity[1], 2}, NumberPadding -> {"", "0"}]& ], 
+        TraditionalForm]}, {-0.6931471805599453, 
+       FormBox[
+        TagBox[
+         InterpretationBox["\"0.50\"", 0.5, AutoDelete -> True], 
+         NumberForm[#, {
+           DirectedInfinity[1], 2}, NumberPadding -> {"", "0"}]& ], 
+        TraditionalForm]}, {0., 
+       FormBox[
+        TagBox[
+         InterpretationBox["\"1.00\"", 1., AutoDelete -> True], NumberForm[#, {
+           DirectedInfinity[1], 2}, NumberPadding -> {"", "0"}]& ], 
+        TraditionalForm]}, {0.6931471805599453, 
+       FormBox[
+        TagBox[
+         InterpretationBox["\"2.00\"", 2., AutoDelete -> True], NumberForm[#, {
+           DirectedInfinity[1], 2}, NumberPadding -> {"", "0"}]& ], 
+        TraditionalForm]}, {1.6094379124341003`, 
+       FormBox[
+        TagBox[
+         InterpretationBox["\"5.00\"", 5., AutoDelete -> True], NumberForm[#, {
+           DirectedInfinity[1], 2}, NumberPadding -> {"", "0"}]& ], 
+        TraditionalForm]}, {-3.506557897319982, 
+       FormBox["\"\"", TraditionalForm], {0.00375, 0.}, {
+        Thickness[0.001]}}, {-3.2188758248682006`, 
+       FormBox["\"\"", TraditionalForm], {0.00375, 0.}, {
+        Thickness[0.001]}}, {-2.8134107167600364`, 
+       FormBox["\"\"", TraditionalForm], {0.00375, 0.}, {
+        Thickness[0.001]}}, {-2.6592600369327783`, 
+       FormBox["\"\"", TraditionalForm], {0.00375, 0.}, {
+        Thickness[0.001]}}, {-2.5257286443082556`, 
+       FormBox["\"\"", TraditionalForm], {0.00375, 0.}, {
+        Thickness[0.001]}}, {-2.4079456086518722`, 
+       FormBox["\"\"", TraditionalForm], {0.00375, 0.}, {
+        Thickness[0.001]}}, {-1.2039728043259361`, 
+       FormBox["\"\"", TraditionalForm], {0.00375, 0.}, {
+        Thickness[0.001]}}, {-0.916290731874155, 
+       FormBox["\"\"", TraditionalForm], {0.00375, 0.}, {
+        Thickness[0.001]}}, {-0.5108256237659907, 
+       FormBox["\"\"", TraditionalForm], {0.00375, 0.}, {
+        Thickness[0.001]}}, {-0.35667494393873245`, 
+       FormBox["\"\"", TraditionalForm], {0.00375, 0.}, {
+        Thickness[0.001]}}, {-0.2231435513142097, 
+       FormBox["\"\"", TraditionalForm], {0.00375, 0.}, {
+        Thickness[0.001]}}, {-0.10536051565782628`, 
+       FormBox["\"\"", TraditionalForm], {0.00375, 0.}, {
+        Thickness[0.001]}}, {1.0986122886681098`, 
+       FormBox["\"\"", TraditionalForm], {0.00375, 0.}, {
+        Thickness[0.001]}}, {1.3862943611198906`, 
+       FormBox["\"\"", TraditionalForm], {0.00375, 0.}, {
+        Thickness[0.001]}}}, {{-4.605170185988092, 
+       FormBox["\"\"", TraditionalForm]}, {-3.912023005428146, 
+       FormBox["\"\"", TraditionalForm]}, {-2.995732273553991, 
+       FormBox["\"\"", TraditionalForm]}, {-2.302585092994046, 
+       FormBox["\"\"", TraditionalForm]}, {-1.6094379124341003`, 
+       FormBox["\"\"", TraditionalForm]}, {-0.6931471805599453, 
+       FormBox["\"\"", TraditionalForm]}, {0., 
+       FormBox["\"\"", TraditionalForm]}, {0.6931471805599453, 
+       FormBox["\"\"", TraditionalForm]}, {1.6094379124341003`, 
+       FormBox["\"\"", TraditionalForm]}, {-3.506557897319982, 
+       FormBox["\"\"", TraditionalForm], {0.00375, 0.}, {
+        Thickness[0.001]}}, {-3.2188758248682006`, 
+       FormBox["\"\"", TraditionalForm], {0.00375, 0.}, {
+        Thickness[0.001]}}, {-2.8134107167600364`, 
+       FormBox["\"\"", TraditionalForm], {0.00375, 0.}, {
+        Thickness[0.001]}}, {-2.6592600369327783`, 
+       FormBox["\"\"", TraditionalForm], {0.00375, 0.}, {
+        Thickness[0.001]}}, {-2.5257286443082556`, 
+       FormBox["\"\"", TraditionalForm], {0.00375, 0.}, {
+        Thickness[0.001]}}, {-2.4079456086518722`, 
+       FormBox["\"\"", TraditionalForm], {0.00375, 0.}, {
+        Thickness[0.001]}}, {-1.2039728043259361`, 
+       FormBox["\"\"", TraditionalForm], {0.00375, 0.}, {
+        Thickness[0.001]}}, {-0.916290731874155, 
+       FormBox["\"\"", TraditionalForm], {0.00375, 0.}, {
+        Thickness[0.001]}}, {-0.5108256237659907, 
+       FormBox["\"\"", TraditionalForm], {0.00375, 0.}, {
+        Thickness[0.001]}}, {-0.35667494393873245`, 
+       FormBox["\"\"", TraditionalForm], {0.00375, 0.}, {
+        Thickness[0.001]}}, {-0.2231435513142097, 
+       FormBox["\"\"", TraditionalForm], {0.00375, 0.}, {
+        Thickness[0.001]}}, {-0.10536051565782628`, 
+       FormBox["\"\"", TraditionalForm], {0.00375, 0.}, {
+        Thickness[0.001]}}, {1.0986122886681098`, 
+       FormBox["\"\"", TraditionalForm], {0.00375, 0.}, {
+        Thickness[0.001]}}, {1.3862943611198906`, 
+       FormBox["\"\"", TraditionalForm], {0.00375, 0.}, {
+        Thickness[0.001]}}}}, {Automatic, Automatic}},
+  GridLines->{None, None},
+  Method->{},
+  PlotRange->{{0., 4.}, {-4.605170185988091, 0.4054651081081644}},
+  PlotRangeClipping->True,
+  PlotRangePadding->{
+    Scaled[0.02], {None, None}},
+  Ticks->{Automatic, {{-4.605170185988092, 
+      FormBox[
+       TagBox[
+        InterpretationBox["\"0.01\"", 0.01, AutoDelete -> True], 
+        NumberForm[#, {
+          DirectedInfinity[1], 2}, NumberPadding -> {"", "0"}]& ], 
+       TraditionalForm]}, {-3.912023005428146, 
+      FormBox[
+       TagBox[
+        InterpretationBox["\"0.02\"", 0.02, AutoDelete -> True], 
+        NumberForm[#, {
+          DirectedInfinity[1], 2}, NumberPadding -> {"", "0"}]& ], 
+       TraditionalForm]}, {-2.995732273553991, 
+      FormBox[
+       TagBox[
+        InterpretationBox["\"0.05\"", 0.05, AutoDelete -> True], 
+        NumberForm[#, {
+          DirectedInfinity[1], 2}, NumberPadding -> {"", "0"}]& ], 
+       TraditionalForm]}, {-2.302585092994046, 
+      FormBox[
+       TagBox[
+        InterpretationBox["\"0.10\"", 0.1, AutoDelete -> True], NumberForm[#, {
+          DirectedInfinity[1], 2}, NumberPadding -> {"", "0"}]& ], 
+       TraditionalForm]}, {-1.6094379124341003`, 
+      FormBox[
+       TagBox[
+        InterpretationBox["\"0.20\"", 0.2, AutoDelete -> True], NumberForm[#, {
+          DirectedInfinity[1], 2}, NumberPadding -> {"", "0"}]& ], 
+       TraditionalForm]}, {-0.6931471805599453, 
+      FormBox[
+       TagBox[
+        InterpretationBox["\"0.50\"", 0.5, AutoDelete -> True], NumberForm[#, {
+          DirectedInfinity[1], 2}, NumberPadding -> {"", "0"}]& ], 
+       TraditionalForm]}, {0., 
+      FormBox[
+       TagBox[
+        InterpretationBox["\"1.00\"", 1., AutoDelete -> True], 
+        NumberForm[#, {
+          DirectedInfinity[1], 2}, NumberPadding -> {"", "0"}]& ], 
+       TraditionalForm]}, {0.6931471805599453, 
+      FormBox[
+       TagBox[
+        InterpretationBox["\"2.00\"", 2., AutoDelete -> True], 
+        NumberForm[#, {
+          DirectedInfinity[1], 2}, NumberPadding -> {"", "0"}]& ], 
+       TraditionalForm]}, {1.6094379124341003`, 
+      FormBox[
+       TagBox[
+        InterpretationBox["\"5.00\"", 5., AutoDelete -> True], 
+        NumberForm[#, {
+          DirectedInfinity[1], 2}, NumberPadding -> {"", "0"}]& ], 
+       TraditionalForm]}, {-3.506557897319982, 
+      FormBox["\"\"", TraditionalForm], {0.00375, 0.}, {
+       Thickness[0.001]}}, {-3.2188758248682006`, 
+      FormBox["\"\"", TraditionalForm], {0.00375, 0.}, {
+       Thickness[0.001]}}, {-2.8134107167600364`, 
+      FormBox["\"\"", TraditionalForm], {0.00375, 0.}, {
+       Thickness[0.001]}}, {-2.6592600369327783`, 
+      FormBox["\"\"", TraditionalForm], {0.00375, 0.}, {
+       Thickness[0.001]}}, {-2.5257286443082556`, 
+      FormBox["\"\"", TraditionalForm], {0.00375, 0.}, {
+       Thickness[0.001]}}, {-2.4079456086518722`, 
+      FormBox["\"\"", TraditionalForm], {0.00375, 0.}, {
+       Thickness[0.001]}}, {-1.2039728043259361`, 
+      FormBox["\"\"", TraditionalForm], {0.00375, 0.}, {
+       Thickness[0.001]}}, {-0.916290731874155, 
+      FormBox["\"\"", TraditionalForm], {0.00375, 0.}, {
+       Thickness[0.001]}}, {-0.5108256237659907, 
+      FormBox["\"\"", TraditionalForm], {0.00375, 0.}, {
+       Thickness[0.001]}}, {-0.35667494393873245`, 
+      FormBox["\"\"", TraditionalForm], {0.00375, 0.}, {
+       Thickness[0.001]}}, {-0.2231435513142097, 
+      FormBox["\"\"", TraditionalForm], {0.00375, 0.}, {
+       Thickness[0.001]}}, {-0.10536051565782628`, 
+      FormBox["\"\"", TraditionalForm], {0.00375, 0.}, {
+       Thickness[0.001]}}, {1.0986122886681098`, 
+      FormBox["\"\"", TraditionalForm], {0.00375, 0.}, {
+       Thickness[0.001]}}, {1.3862943611198906`, 
+      FormBox["\"\"", TraditionalForm], {0.00375, 0.}, {
+       Thickness[0.001]}}}}]], "Output"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Heat between base and bath", "Section"],
+
+Cell["\<\
+Now we work out how much heat it would take (per mole) to bring the salt back \
+up from the base temperature to the bath temperature. Here we use \
+\>", "Text"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"VM", " ", "b"}]], "Input"],
+
+Cell[BoxData[
+ TemplateBox[{"0.09003401638365499`"},
+  "QuantityUnit",
+  DisplayFunction->(TooltipBox[
+    StyleBox[
+     RowBox[{#, "\[InvisibleSpace]", 
+       StyleBox[
+        RowBox[{" ", 
+          RowBox[{"\"kg\"", "\[ThinSpace]", 
+            SuperscriptBox["\"m\"", "2"], "\[InvisibleSpace]", "\"K\"", 
+            "\[InvisibleSpace]", "\"/(\"", "\[InvisibleSpace]", 
+            SuperscriptBox["\"s\"", "2"], "\[InvisibleSpace]", "\"mol\"", 
+            "\[InvisibleSpace]", "\")\""}]}], 
+        "QuantityUnitTraditionalLabel"]}], ShowStringCharacters -> False], 
+    "Unit: kilogram meter squared kelvins per second squared mole"]& ),
+  InterpretationFunction->(RowBox[{"Quantity", "[", 
+     RowBox[{#, ",", 
+       FractionBox[
+        RowBox[{"\"Kelvins\"", " ", "\"Kilograms\"", " ", 
+          SuperscriptBox["\"Meters\"", "2"]}], 
+        RowBox[{"\"Moles\"", " ", 
+          SuperscriptBox["\"Seconds\"", "2"]}]]}], "]"}]& )]], "Output"]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"CM", "[", "T_", "]"}], ":=", 
+  FractionBox[
+   RowBox[{"VM", " ", "b"}], 
+   SuperscriptBox["T", "2"]]}]], "Input"],
+
+Cell[TextData[{
+ "Now, we have ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{
+     SubscriptBox["C", "M"], "(", "T", ")"}], "=", 
+    RowBox[{"\[Delta]Q", "/", "dT"}]}], TraditionalForm]]],
+ ", so"
+}], "Text"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"QM", "=", 
+  RowBox[{
+   RowBox[{"VM", " ", "b", 
+    RowBox[{
+     SubsuperscriptBox["\[Integral]", 
+      SubscriptBox["T", "base"], 
+      SubscriptBox["T", "bath"]], 
+     RowBox[{
+      FractionBox["1", 
+       SuperscriptBox["T", "2"]], 
+      RowBox[{"\[DifferentialD]", "T"}]}]}]}], "//", 
+   RowBox[{
+    RowBox[{"FullSimplify", "[", 
+     RowBox[{"#", ",", 
+      RowBox[{"Assumptions", "\[Rule]", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{
+          SubscriptBox["T", "bath"], ">", "0"}], ",", 
+         RowBox[{
+          SubscriptBox["T", "base"], ">", "0"}], ",", 
+         RowBox[{
+          SubscriptBox["T", "bath"], ">", 
+          SubscriptBox["T", "base"]}]}], "}"}]}]}], "]"}], 
+    "&"}]}]}]], "Input"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(", 
+   TemplateBox[{"0.09003401638365499`"},
+    "QuantityUnit",
+    DisplayFunction->(TooltipBox[
+      StyleBox[
+       RowBox[{#, "\[InvisibleSpace]", 
+         StyleBox[
+          RowBox[{" ", 
+            RowBox[{"\"kg\"", "\[ThinSpace]", 
+              SuperscriptBox["\"m\"", "2"], "\[InvisibleSpace]", "\"K\"", 
+              "\[InvisibleSpace]", "\"/(\"", "\[InvisibleSpace]", 
+              SuperscriptBox["\"s\"", "2"], "\[InvisibleSpace]", "\"mol\"", 
+              "\[InvisibleSpace]", "\")\""}]}], 
+          "QuantityUnitTraditionalLabel"]}], ShowStringCharacters -> False], 
+      "Unit: kilogram meter squared kelvins per second squared mole"]& ),
+    InterpretationFunction->(RowBox[{"Quantity", "[", 
+       RowBox[{#, ",", 
+         FractionBox[
+          RowBox[{"\"Kelvins\"", " ", "\"Kilograms\"", " ", 
+            SuperscriptBox["\"Meters\"", "2"]}], 
+          RowBox[{"\"Moles\"", " ", 
+            SuperscriptBox["\"Seconds\"", "2"]}]]}], "]"}]& )], ")"}], " ", 
+  RowBox[{"(", 
+   RowBox[{
+    FractionBox["1", 
+     SubscriptBox["T", "base"]], "-", 
+    FractionBox["1", 
+     SubscriptBox["T", "bath"]]}], ")"}]}]], "Output"]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"QMdiff", "[", 
+   RowBox[{"Tbase_", ",", "Tbath_"}], "]"}], ":=", 
+  RowBox[{"QM", "/.", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{
+      SubscriptBox["T", "base"], "\[Rule]", 
+      RowBox[{"Quantity", "[", 
+       RowBox[{"Tbase", ",", "\"\<Kelvins\>\""}], "]"}]}], ",", 
+     RowBox[{
+      SubscriptBox["T", "bath"], "\[Rule]", 
+      RowBox[{"Quantity", "[", 
+       RowBox[{"Tbath", ",", "\"\<Kelvins\>\""}], "]"}]}]}], 
+    "}"}]}]}]], "Input"],
+
+Cell["For example:", "Text"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"QMdiff", "[", 
+  RowBox[{"0.1", ",", "1.5"}], "]"}]], "Input"],
+
+Cell[BoxData[
+ TemplateBox[{"0.8403174862474466`"},
+  "QuantityUnit",
+  DisplayFunction->(TooltipBox[
+    StyleBox[
+     RowBox[{#, "\[InvisibleSpace]", 
+       StyleBox[
+        RowBox[{" ", 
+          RowBox[{"\"kg\"", "\[ThinSpace]", 
+            SuperscriptBox["\"m\"", "2"], "\[NegativeMediumSpace]", "\"/(\"", 
+            "\[InvisibleSpace]", 
+            SuperscriptBox["\"s\"", "2"], "\[InvisibleSpace]", "\"mol\"", 
+            "\[InvisibleSpace]", "\")\""}]}], 
+        "QuantityUnitTraditionalLabel"]}], ShowStringCharacters -> False], 
+    "Unit: kilogram meters squared per second squared mole"]& ),
+  InterpretationFunction->(RowBox[{"Quantity", "[", 
+     RowBox[{#, ",", 
+       FractionBox[
+        RowBox[{"\"Kilograms\"", " ", 
+          SuperscriptBox["\"Meters\"", "2"]}], 
+        RowBox[{"\"Moles\"", " ", 
+          SuperscriptBox["\"Seconds\"", "2"]}]]}], "]"}]& )]], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"UnitConvert", "[", 
+  RowBox[{
+   TemplateBox[{"0.8403174862474466`"},
+    "QuantityUnit",
+    DisplayFunction->(TooltipBox[
+      StyleBox[
+       RowBox[{#, "\[InvisibleSpace]", 
+         StyleBox[
+          RowBox[{" ", 
+            RowBox[{"\"kg\"", "\[ThinSpace]", 
+              SuperscriptBox["\"m\"", "2"], "\[NegativeMediumSpace]", 
+              "\"/(\"", "\[InvisibleSpace]", 
+              SuperscriptBox["\"s\"", "2"], "\[InvisibleSpace]", "\"mol\"", 
+              "\[InvisibleSpace]", "\")\""}]}], 
+          "QuantityUnitTraditionalLabel"]}], ShowStringCharacters -> False], 
+      "Unit: kilogram meters squared per second squared mole"]& ),
+    InterpretationFunction->(RowBox[{"Quantity", "[", 
+       RowBox[{#, ",", 
+         FractionBox[
+          RowBox[{"\"Kilograms\"", " ", 
+            SuperscriptBox["\"Meters\"", "2"]}], 
+          RowBox[{"\"Moles\"", " ", 
+            SuperscriptBox["\"Seconds\"", "2"]}]]}], "]"}]& )], ",", 
+   "\"\<J/mol\>\""}], "]"}]], "Input",
+ NumberMarks->False],
+
+Cell[BoxData[
+ TemplateBox[{"0.8403174862474466`"},
+  "QuantityUnit",
+  DisplayFunction->(TooltipBox[
+    StyleBox[
+     RowBox[{#, "\[InvisibleSpace]", 
+       StyleBox[
+        RowBox[{" ", 
+          
+          RowBox[{"\"J\"", "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]", 
+            "\"mol\""}]}], "QuantityUnitTraditionalLabel"]}], 
+     ShowStringCharacters -> False], "Unit: joules per mole"]& ),
+  InterpretationFunction->(RowBox[{"Quantity", "[", 
+     RowBox[{#, ",", 
+       FractionBox["\"Joules\"", "\"Moles\""]}], "]"}]& )]], "Output"]
+}, Open  ]],
+
+Cell["\<\
+Let\[CloseCurlyQuote]s tabulate this and plot it, assuming a constant bath \
+temperature.\
+\>", "Text"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Qpoints", "=", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"#", ",", 
+       RowBox[{"QuantityMagnitude", "[", 
+        RowBox[{"QMdiff", "[", 
+         RowBox[{"#", ",", "1.5"}], "]"}], "]"}]}], "}"}], "&"}], "/@", 
+    RowBox[{"Table", "[", 
+     RowBox[{"Tbase", ",", 
+      RowBox[{"{", 
+       RowBox[{"Tbase", ",", "0.05", ",", "1.5", ",", "0.03"}], "}"}]}], 
+     "]"}]}]}], ";"}]], "Input"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"d", "=", 
+   RowBox[{"Transpose", "@", "Qpoints"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{"ListPlot", "[", 
+  RowBox[{
+   RowBox[{"Transpose", "@", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"Reverse", "@", 
+       RowBox[{"d", "[", 
+        RowBox[{"[", "1", "]"}], "]"}]}], ",", 
+      RowBox[{"d", "[", 
+       RowBox[{"[", "2", "]"}], "]"}]}], "}"}]}], ",", 
+   RowBox[{"Ticks", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"Transpose", "@", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"Range", "[", 
+          RowBox[{"0", ",", "1.5", ",", "0.2"}], "]"}], ",", 
+         RowBox[{"Range", "[", 
+          RowBox[{"1.5", ",", "0", ",", 
+           RowBox[{"-", "0.2"}]}], "]"}]}], "}"}]}], ",", "Automatic"}], 
+     "}"}]}], ",", 
+   RowBox[{"Joined", "\[Rule]", "True"}], ",", 
+   RowBox[{"AxesLabel", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{
+     "\"\<\!\(\*SubscriptBox[\(T\), \(base\)]\) [K]\>\"", ",", 
+      "\"\<\!\(\*SubscriptBox[\(Q\), \(difference\)]\) [J/mol]\>\""}], 
+     "}"}]}], ",", 
+   RowBox[{"PlotRange", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{"0.05", ",", "1"}], "}"}]}]}], "]"}]}], "Input"],
+
+Cell[BoxData[
+ GraphicsBox[{{}, 
+   {RGBColor[0.24720000000000014`, 0.24, 0.6], LineBox[CompressedData["
+1:eJwtkWtIk1EAhtVZhhHdVgmlbiqiYFitRpTzTfCCIpWXH2WCqCmTTKdEMmeF
+xdLSmomVZVE2CxVU8tZSSZtpuLSm6OZMXPMyL1vlvC0KM7/TeeHjcH58z3kv
+3IT0yCQ7Gxubg+sfc2rlIoGj1oryUEdNq+4PYmXKZa9YK47o+NKJzRYYstm1
+IYYV6LRcSVzQDJKJVmCJqbEvrhyHKULhIjUtQ1WWomrfMoaMdZpctAwX+Z1+
+n1/DWPFiiEvYkJMU68EfgoTBZS/hq9vkiHPkAGyIlpB6WLaf56CGlAAXkZh0
+ybYquheOxOAi6jm5vAv+PSD2ZAvQGUU9ixXd2MXg2AvIauqw16d+wONHjCwY
+uO2VGXBdCVcCtGB2J7csSNOBCiaufB7e8zdHwlrfwZsEnodvgLb4tGsbzf8T
+mr1C67TqLc37A8KEOJ5nwxua7ztYq8Hxgi9NNI8ZUbcCm9f2NFL/JrTZZilu
+5NWjiPidQ7dF3KJ3ek39zcKT48Ayy+qonxnsDvzLfuxWAxKndhrcHfxrholq
+MLAIhRHO8/eaGz9XopPBKaegcc+vbRl7hb5eRpOwNeRePLDtJf7vOQFT51SJ
+Ok6OcbLfOKpDVgvaVeUwE3sGGBXxpyQnn9N9vuGq2Cn4Sf9TrBHpwXPvds/z
+LQOJxx6Docbjrn9DKe1rFBqhuK/67AOQOgQjYIkLBZs4JSD4iGGIUzLTRlnF
+tD8N3PhRc2a7ItrXIB6Gptel8QvpngPI93wmGbqfT/tQY1+X3+VOjhTkKuqD
+8WPi1uODubS/HtidsRZsPHcF5HdlF9ycD4WfiM6i+d6j5rw+p1SWQf22QfOb
+9+LTdiF9vxF+R8N9YiwxlFcFdV2YIjv5GP4BpLaJ7w==
+     "]]}, {}},
+  AspectRatio->NCache[GoldenRatio^(-1), 0.6180339887498948],
+  Axes->True,
+  AxesLabel->{
+    FormBox[
+    "\"\\!\\(\\*SubscriptBox[\\(T\\), \\(base\\)]\\) [K]\"", TraditionalForm], 
+    FormBox[
+    "\"\\!\\(\\*SubscriptBox[\\(Q\\), \\(difference\\)]\\) [J/mol]\"", 
+     TraditionalForm]},
+  AxesOrigin->{0, 0.05},
+  Method->{},
+  PlotRange->{{0, 1.49}, {0.05, 1}},
+  PlotRangeClipping->True,
+  PlotRangePadding->{{0.0298, 0.0298}, {0., 0.}},
+  Ticks->{{{0., 
+      FormBox["1.5`", TraditionalForm]}, {0.2, 
+      FormBox["1.3`", TraditionalForm]}, {0.4, 
+      FormBox["1.1`", TraditionalForm]}, {0.6000000000000001, 
+      FormBox["0.8999999999999999`", TraditionalForm]}, {0.8, 
+      FormBox["0.7`", TraditionalForm]}, {1., 
+      FormBox["0.5`", TraditionalForm]}, {1.2000000000000002`, 
+      FormBox["0.2999999999999998`", TraditionalForm]}, {
+     1.4000000000000001`, 
+      FormBox["0.09999999999999987`", TraditionalForm]}}, 
+    Automatic}]], "Output"]
+}, Open  ]]
+}, Open  ]]
+},
+WindowSize->{740, 867},
+WindowMargins->{{12, Automatic}, {Automatic, 24}},
+FrontEndVersion->"9.0 for Mac OS X x86 (32-bit, 64-bit Kernel) (January 25, \
+2013)",
+StyleDefinitions->"Default.nb"
+]
