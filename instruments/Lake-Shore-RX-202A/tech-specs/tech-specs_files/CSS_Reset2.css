@@ -1,0 +1,856 @@
+﻿/* begin CSS reset to reset styles to a default state so they can be modified easily*/
+.ms-WPTitle a
+{color:#355787;text-decoration:none;}
+.ms-linksection-level1 ul li a
+{color:#355787;text-decoration:none;}
+.ms-vb-user a:link
+{color:#355787;text-decoration:none;}
+.ms-vb2 a:link
+{color:#355787;text-decoration:none;}
+.ms-vb a:link
+{color:#355787;text-decoration:none;}
+.ms-ltviewselectormenuheader .ms-viewselectorhover a
+{color:#355787;text-decoration:none;}
+.ms-ltviewselectormenuheader .ms-viewselector a
+{color:#355787;text-decoration:none;}
+a.ms-addnew
+{color:#355787;text-decoration:none;}
+.ms-menutoolbar td a
+{color:#355787;text-decoration:none;}
+.s4-ql ul.root ul > li > a
+{color:#355787;text-decoration:none;}
+.s4-ql a.selected
+{color:#355787;text-decoration:none;}
+.s4-qlheader
+{color:#355787;text-decoration:none;}
+.s4-ql ul.root > li > .menu-item
+{color:#355787;text-decoration:none;}
+.link-item a:link
+{color:#355787;text-decoration:none;}
+.link-item a
+{color:#355787;text-decoration:none;}
+.ms-WPBody a:link
+{color:#355787;text-decoration:none;}
+.s4-tn li.static > .menu-item
+{color:#355787;text-decoration:none;}
+.s4-title h2 a
+{color:#355787;text-decoration:none;}
+.s4-title h1 a
+{color:#355787;text-decoration:none;}
+.ms-linksection-level1 ul li a:visited
+{color:#355787;text-decoration:none;}
+.ms-vb-user a:visited
+{color:#355787;text-decoration:none;}
+.ms-vb2 a:visited
+{color:#355787;text-decoration:none;}
+.ms-vb a:visited
+{color:#355787;text-decoration:none;}
+.ms-ltviewselectormenuheader .ms-viewselectorhover a:visited
+{color:#355787;text-decoration:none;}
+.ms-ltviewselectormenuheader .ms-viewselector a:visited
+{color:#355787;text-decoration:none;}
+a.ms-addnew:visited
+{color:#355787;text-decoration:none;}
+.s4-qlheader:visited
+{color:#355787;text-decoration:none;}
+.link-item a:visited
+{color:#355787;text-decoration:none;}
+.ms-WPBody a:visited
+{color:#355787;text-decoration:none;}
+.ms-disc a:hover
+{color:#8E2323;text-decoration:underline;}
+.ms-sectionheader a:hover
+{color:#8E2323;text-decoration:underline;}
+.ms-propertysheet a:hover
+{color:#8E2323;text-decoration:underline;}
+.ms-linksection-level1 ul li a:hover
+{color:#8E2323;text-decoration:underline;}
+.ms-vb-user a:hover
+{color:#8E2323;text-decoration:underline;}
+.ms-vb2 a:hover
+{color:#8E2323;text-decoration:underline;}
+.ms-vb a:hover
+{color:#8E2323;text-decoration:underline;}
+.ms-vh2-nofilter-notextalign a:hover
+{color:#8E2323;text-decoration:underline;}
+.ms-vh2-nofilter a:hover
+{color:#8E2323;text-decoration:underline;}
+a.ms-toolbar:hover
+{color:#8E2323;text-decoration:underline;}
+.ms-ltviewselectormenuheader .ms-viewselectorhover a:hover
+{color:#8E2323;text-decoration:underline;}
+.ms-ltviewselectormenuheader .ms-viewselector a:hover
+{color:#8E2323;text-decoration:underline;}
+a.ms-addnew:hover
+{color:#8E2323;text-decoration:underline;}
+.ms-vh2 a:hover
+{color:#8E2323;text-decoration:underline;}
+.ms-vh a:hover
+{color:#8E2323;text-decoration:underline;}
+.ms-menutoolbar td a:hover
+{color:#8E2323;text-decoration:underline;}
+.s4-ql ul.root ul > li > a:hover
+{color:#8E2323;text-decoration:underline;}
+.ms-rtestate-field a:hover
+{color:#8E2323;text-decoration:underline;}
+.s4-qlheader:hover
+{color:#8E2323;text-decoration:underline;}
+.s4-ql ul.root > li > a:hover
+{color:#8E2323;text-decoration:underline;}
+.s4-ql ul > li > a:hover
+{color:#8E2323;text-decoration:underline;}
+.link-item a:hover
+{color:#8E2323;text-decoration:underline;}
+.ms-WPBody a:hover
+{color:#8E2323;text-decoration:underline;}
+.s4-toplinks .s4-tn a.selected:hover
+{color:#8E2323;text-decoration:underline;}
+.s4-tn li.static > a:hover
+{color:#8E2323;text-decoration:underline;}
+.s4-title h2 a:hover
+{color:#8E2323;text-decoration:underline;}
+.s4-title h1 a:hover
+{color:#8E2323;text-decoration:underline;}
+.ms-linksection-level1 ul li a:active
+{color:#8E2323;text-decoration:none;}
+.ms-vb-user a:active
+{color:#8E2323;text-decoration:none;}
+.ms-vb2 a:active
+{color:#8E2323;text-decoration:none;}
+.ms-vb a:active
+{color:#8E2323;text-decoration:none;}
+.ms-ltviewselectormenuheader .ms-viewselectorhover a:active
+{color:#8E2323;text-decoration:none;}
+.ms-ltviewselectormenuheader .ms-viewselector a:active
+{color:#8E2323;text-decoration:none;}
+a.ms-addnew:active
+{color:#8E2323;text-decoration:none;}
+.link-item a:active
+{color:#8E2323;text-decoration:none;}
+.ms-navitem a:link
+{color:#355787!important;text-decoration:none!important;}
+.ms-selectorlink a:visited
+{color:#355787!important;text-decoration:none!important;}
+.ms-selectorlink a
+{color:#355787!important;text-decoration:none!important;}
+.ms-addnew a
+{color:#355787!important;text-decoration:none!important;}
+.ms-viewlsts .ms-vb2 > a
+{color:#355787!important;text-decoration:none!important;}
+.s4-ql a.selected
+{color:#355787!important;text-decoration:none!important;}
+.ms-navitem a:visited{color:#355787!important;text-decoration:none!important;}
+.ms-addnew a:visited{color:#355787!important;text-decoration:none!important;}
+.ms-viewlsts .ms-vb2 > a:visited{color:#355787!important;text-decoration:none!important;}
+.s4-ql a.selected:visited{color:#355787!important;text-decoration:none!important;}
+.ms-WPTitle a:hover
+{color:#8E2323!important;text-decoration:underline!important;}
+.ms-navitem a:hover
+{color:#8E2323!important;text-decoration:underline!important;}
+.ms-selectorlink a:hover
+{color:#8E2323!important;text-decoration:underline!important;}
+tr.ms-itmhover a:hover
+{color:#8E2323!important;text-decoration:underline!important;}
+tr.s4-itm-hover a:hover
+{color:#8E2323!important;text-decoration:underline!important;}
+.ms-addnew a:hover
+{color:#8E2323!important;text-decoration:underline!important;}
+.ms-viewlsts .ms-vb2 > a:hover
+{color:#8E2323!important;text-decoration:underline!important;}
+.s4-ql a.selected:hover
+{color:#8E2323!important;text-decoration:underline!important;}
+.ms-navitem a:active
+{color:#8E2323!important;text-decoration:none!important;}
+.ms-addnew a:active
+{color:#8E2323!important;text-decoration:none!important;}
+.ms-viewlsts .ms-vb2 > a:active
+{color:#8E2323!important;text-decoration:none!important;}
+.s4-ql a.selected:active
+{color:#8E2323!important;text-decoration:none!important;}
+.ms-surveyTotal
+{font-family:inherit;}
+.ms-surveyVBarTC
+{font-family:inherit;}
+.ms-surveyVBarT
+{font-family:inherit;}
+.ms-gridT1
+{font-family:inherit;}
+.ms-gridCol
+{font-family:inherit;}
+.ms-formbodysurvey
+{font-family:inherit;}
+table tr td.ms-disc-bordered-noleft
+{font-family:inherit;}
+table.ms-disc td
+{font-family:inherit;}
+.ms-rtefield
+{font-family:inherit;}
+.ms-lookuptypeintextbox
+{font-family:inherit;}
+.ms-rtedropdown
+{font-family:inherit;}
+.ms-radiotext
+{font-family:inherit;}
+.ms-rtelonger
+{font-family:inherit;}
+.ms-longer
+{font-family:inherit;}
+.ms-rtelong
+{font-family:inherit;}
+groupheader
+{font-family:inherit;}
+.medium
+{font-family:inherit;}
+.ms-WPBody td
+{font-family:inherit;}
+.level-description
+{font-family:inherit;}
+.headertitle-small a:link
+{font-family:inherit;}
+.headertitle-small a
+{font-family:inherit;}
+.headertitle-small
+{font-family:inherit;}
+.headertitle-large a:link
+{font-family:inherit;}
+.headertitle-large a
+{font-family:inherit;}
+.headertitle-large
+{font-family:inherit;}
+.headertitle-band a:link
+{font-family:inherit;}
+.headertitle-band a
+{font-family:inherit;}
+.headertitle-band
+{font-family:inherit;}
+.level-item a:link
+{font-family:inherit;}
+.level-item a
+{font-family:inherit;}
+.level-item
+{font-family:inherit;}
+.headertitle a:link
+{font-family:inherit;}
+.headertitle a
+{font-family:inherit;}
+.headertitle
+{font-family:inherit;}
+div.title-With-Background a:active
+{font-family:inherit;}
+div.title-With-Background a:visited
+{font-family:inherit;}
+div.title-With-Background a:hover
+{font-family:inherit;}
+div.title-With-Background a:link
+{font-family:inherit;}
+div.title-With-Background a
+{font-family:inherit;}
+.link-item-large a:link
+{font-family:inherit;}
+.link-item-large a
+{font-family:inherit;}
+.link-item-large
+{font-family:inherit;}
+.ms-WPTitle
+{font-family:inherit;}
+.ms-wpadder-zoneArea button
+{font-family:inherit;}
+.ms-wpadder-description
+{font-family:inherit;}
+.ms-wpadder-tabTable th
+{font-family:inherit;}
+.ms-wpadder-upload button
+{font-family:inherit;}
+.ms-wpadder-upload input
+{font-family:inherit;}
+.ms-wpadder-items
+{font-family:inherit;}
+.ms-wpadder-categoryColumn td
+{font-family:inherit;}
+.ms-wpadder-categoryColumn
+{font-family:inherit;}
+.ms-wpadder-wpname
+{font-family:inherit;}
+.ms-wpadder-sectionhead
+{font-family:inherit;}
+.ms-SPButton
+{font-family:inherit;}
+.ms-SPZoneLabel
+{font-family:inherit;}
+.ms-listedit .ms-descriptiontext
+{font-family:inherit;}
+.ms-listedit .ms-propertysheet
+{font-family:inherit;}
+.ms-listedit .ms-pageinformation table td
+{font-family:inherit;}
+.ms-listedit table.ms-pageinformation
+{font-family:inherit;}
+.ms-listedit .ms-linksectionheader .ms-standardheader
+{font-family:inherit;}
+.ms-listedit .ms-linksectionheader
+{font-family:inherit;}
+.ms-listedit .ms-standardheader
+{font-family:inherit;}
+.ms-paging
+{font-family:inherit;}
+.ms-formdescription
+{font-family:inherit;}
+.ms-propertysheet
+{font-family:inherit;}
+th.ms-vh2-nograd-icon
+{font-family:inherit;}
+th.ms-vh2-nograd
+{font-family:inherit;}
+.ms-vh2-nofilter-icon
+{font-family:inherit;}
+th .ms-vb
+{font-family:inherit;}
+.ms-linksectionheader
+{font-family:inherit;}
+.ms-createpageinformation table td
+{font-family:inherit;}
+.ms-pageinformation table td
+{font-family:inherit;}
+table.ms-createpageinformation
+{font-family:inherit;}
+table.ms-pageinformation
+{font-family:inherit;}
+.ms-pageinformation h3.ms-standardheader
+{font-family:inherit;}
+.ms-linksection-level1
+{font-family:inherit;}
+.ms-sectionheader
+{font-family:inherit;}
+.description
+{font-family:inherit;}
+.ms-formfieldlabelcontainer
+{font-family:inherit;}
+div.ms-formfieldlabelcontainer span.ms-formfieldlabel
+{font-family:inherit;}
+.ms-toolbarContainer
+{font-family:inherit;}
+.ms-inputuserfield
+{font-family:inherit;}
+.ms-long
+{font-family:inherit;}
+.ms-input
+{font-family:inherit;}
+select
+{font-family:inherit;}
+.ms-formtoolbar
+{font-family:inherit;}
+.ms-descriptiontext
+{font-family:inherit;}
+.ms-formlabel
+{font-family:inherit;}
+.ms-dlgTitleText
+{font-family:inherit;}
+td.ms-vb
+{font-family:inherit;}
+th.ms-vh
+{font-family:inherit;}
+.ms-ltviewselectormenuheader .ms-viewselectorhover a
+{font-family:inherit;}
+.ms-ltviewselectormenuheader .ms-viewselector a
+{font-family:inherit;}
+a.ms-addnew
+{font-family:inherit;}
+td.ms-vb
+{font-family:inherit;}
+.ms-ph
+{font-family:inherit;}
+.ms-pb-selected
+{font-family:inherit;}
+.ms-pb
+{font-family:inherit;}
+.ms-vh2-nofilter-icon
+{font-family:inherit;}
+.ms-vh2-nograd-icon
+{font-family:inherit;}
+.ms-vh3-nograd
+{font-family:inherit;}
+.ms-vh2-nograd
+{font-family:inherit;}
+.ms-vb-user
+{font-family:inherit;}
+.ms-vb-tall
+{font-family:inherit;}
+.ms-vb2
+{font-family:inherit;}
+.ms-vb
+{font-family:inherit;}
+.ms-gbload
+{font-family:inherit;}
+.ms-gb2
+{font-family:inherit;}
+.ms-gb
+{font-family:inherit;}
+.ms-vhImage
+{font-family:inherit;}
+.ms-vh-icon-empty
+{font-family:inherit;}
+.ms-vh-icon
+{font-family:inherit;}
+.ms-vh2
+{font-family:inherit;}
+.ms-vh
+{font-family:inherit;}
+.ms-vh2-nofilter-notextalign
+{font-family:inherit;}
+.ms-vh2-nofilter
+{font-family:inherit;}
+.ms-viewselectorhover
+{font-family:inherit;}
+.ms-viewselectortext
+{font-family:inherit;}
+.ms-viewselector
+{font-family:inherit;}
+.ms-listheaderlabel
+{font-family:inherit;}
+.ms-toolbar
+{font-family:inherit;}
+.ms-menutoolbar td a
+{font-family:inherit;}
+.ms-WPBody
+{font-family:inherit;}
+.link-item a:link
+{font-family:inherit;}
+.link-item a
+{font-family:inherit;}
+.link-item
+{font-family:inherit;}
+body #pageStatusBar
+{font-family:inherit;}
+.ms-sbtable
+{font-family:inherit;}
+.ms-sbplain
+{font-family:inherit;}
+.ms-socialNotif-Container
+{font-family:inherit;}
+.s4-titletable
+{font-family:inherit;}
+.ms-cui-toolbar-toolbar
+{font-family:inherit;}
+div.ms-MenuUIPopupBody.ms-MenuUIPopupScreen div.ms-MenuUIPopupInner div
+{font-family:inherit;}
+div.ms-MenuUIPopupBody.ms-MenuUIPopupScreen div.ms-MenuUIPopupInner
+{font-family:inherit;}
+div.ms-MenuUIPopupBody.ms-MenuUIPopupScreen
+{font-family:inherit;}
+.ms-welcomeMenu
+{font-family:inherit;}
+.ms-siteactionsmenuhover
+{font-family:inherit;}
+.ms-siteactionsmenuinner
+{font-family:inherit;}
+.ms-cui-menu
+{font-family:inherit;}
+.ms-cui-ribbon
+{font-family:inherit;}
+.ms-selectorlink a:visited
+{font-family:inherit!important;}
+.ms-selectorlink a
+{font-family:inherit!important;}
+.ms-gridCol
+{font-size:1em;}
+table tr td.ms-disc-bordered-noleft
+{font-size:1em;}
+table.ms-disc td
+{font-size:1em;}
+.ms-rtefield
+{font-size:1em;}
+.ms-lookuptypeintextbox
+{font-size:1em;}
+.ms-rtedropdown
+{font-size:1em;}
+.ms-radiotext
+{font-size:1em;}
+.ms-rtelonger
+{font-size:1em;}
+.ms-longer
+{font-size:1em;}
+.ms-rtelong
+{font-size:1em;}
+groupheader
+{font-size:1em;}
+.medium
+{font-size:1em;}
+.ms-WPBody td
+{font-size:1em;}
+.headertitle
+{font-size:1em;}
+.level-description
+{font-size:1em;}
+.level-item a:link
+{font-size:1em;}
+.level-item a
+{font-size:1em;}
+.level-item
+{font-size:1em;}
+.ms-WPTitle
+{font-size:1em;}
+.ms-wpadder-zoneArea button
+{font-size:1em;}
+.ms-wpadder-description
+{font-size:1em;}
+.ms-wpadder-tabTable th
+{font-size:1em;}
+.ms-wpadder-upload button
+{font-size:1em;}
+.ms-wpadder-upload input
+{font-size:1em;}
+.ms-wpadder-items
+{font-size:1em;}
+.ms-wpadder-categoryColumn td
+{font-size:1em;}
+.ms-wpadder-categoryColumn
+{font-size:1em;}
+.ms-SPButton
+{font-size:1em;}
+.ms-SPZoneLabel
+{font-size:1em;}
+.ms-linksectionheader
+{font-size:1em;}
+.ms-listedit .ms-linksectionheader .ms-standardheader
+{font-size:1em;}
+.ms-listedit .ms-linksectionheader
+{font-size:1em;}
+.ms-listedit .ms-standardheader
+{font-size:1em;}
+.ms-paging
+{font-size:1em;}
+.ms-authoringcontrols
+{font-size:1em;}
+.ms-formdescription
+{font-size:1em;}
+th.ms-vh2-nograd-icon
+{font-size:1em;}
+th.ms-vh2-nograd
+{font-size:1em;}
+.ms-vh2-nofilter-icon
+{font-size:1em;}
+th .ms-vb
+{font-size:1em;}
+.ms-createpageinformation table td
+{font-size:1em;}
+.ms-pageinformation table td
+{font-size:1em;}
+table.ms-createpageinformation
+{font-size:1em;}
+table.ms-pageinformation
+{font-size:1em;}
+.ms-pageinformation h3.ms-standardheader
+{font-size:1em;}
+.ms-linksection-level1 ul li a
+{font-size:1em;}
+.ms-linksection-level1 h3
+{font-size:1em;}
+.description
+{font-size:1em;}
+.ms-formfieldlabelcontainer
+{font-size:1em;}
+div.ms-formfieldlabelcontainer span.ms-formfieldlabel
+{font-size:1em;}
+.ms-toolbarContainer
+{font-size:1em;}
+.ms-inputuserfield
+{font-size:1em;}
+.ms-dttimeinput
+{font-size:1em;}
+.ms-dtinput
+{font-size:1em;}
+.ms-long
+{font-size:1em;}
+.ms-input
+{font-size:1em;}
+select
+{font-size:1em;}
+.ms-formtoolbar
+{font-size:1em;}
+.ms-descriptiontext
+{font-size:1em;}
+.ms-dlgTitleText
+{font-size:1em;}
+.s4-titletable
+{font-size:1em;}
+td.ms-vb
+{font-size:1em;}
+th.ms-vh
+{font-size:1em;}
+.ms-ltviewselectormenuheader .ms-viewselectorhover a
+{font-size:1em;}
+.ms-ltviewselectormenuheader .ms-viewselector a
+{font-size:1em;}
+a.ms-addnew
+{font-size:1em;}
+td.ms-vb
+{font-size:1em;}
+.ms-ph
+{font-size:1em;}
+.ms-pb-selected
+{font-size:1em;}
+.ms-pb
+{font-size:1em;}
+.ms-vh2-nofilter-icon
+{font-size:1em;}
+.ms-vh2-nograd-icon
+{font-size:1em;}
+.ms-vh3-nograd
+{font-size:1em;}
+.ms-vh2-nograd
+{font-size:1em;}
+.ms-vb-user
+{font-size:1em;}
+.ms-vb-tall
+{font-size:1em;}
+.ms-vb2
+{font-size:1em;}
+.ms-vb
+{font-size:1em;}
+.ms-gbload
+{font-size:1em;}
+.ms-gb2
+{font-size:1em;}
+.ms-gb
+{font-size:1em;}
+.ms-vhImage
+{font-size:1em;}
+.ms-vh-icon-empty
+{font-size:1em;}
+.ms-vh-icon
+{font-size:1em;}
+.ms-vh2
+{font-size:1em;}
+.ms-vh
+{font-size:1em;}
+.ms-vh2-nofilter-notextalign
+{font-size:1em;}
+.ms-vh2-nofilter
+{font-size:1em;}
+.ms-viewselectorhover
+{font-size:1em;}
+.ms-viewselectortext
+{font-size:1em;}
+.ms-viewselector
+{font-size:1em;}
+.ms-listheaderlabel
+{font-size:1em;}
+.ms-toolbar
+{font-size:1em;}
+.ms-menutoolbar td a
+{font-size:1em;}
+.s4-qlheader:visited
+{font-size:1em;}
+.s4-qlheader
+{font-size:1em;}
+.s4-ql ul.root > li > .menu-item
+{font-size:1em;}
+.ms-WPBody
+{font-size:1em;}
+.link-item a:link
+{font-size:1em;}
+.link-item a
+{font-size:1em;}
+.link-item
+{font-size:1em;}
+.s4-search input
+{font-size:1em;}
+.ms-sbplain
+{font-size:1em;}
+.s4-search input.ms-sbplain
+{font-size:1em;}
+div.ms-MenuUIPopupScreen div.ms-MenuUIPopupInner div.ms-MenuUILargeRtL ul.ms-MenuUIUL div.ms-MenuUIULItem a.ms-MenuUIULLink
+{font-size:1em;}
+div.ms-MenuUIPopupScreen div.ms-MenuUIPopupInner div.ms-MenuUILarge ul.ms-MenuUIUL div.ms-MenuUIULItem a.ms-MenuUIULLink
+{font-size:1em;}
+.ms-menuuilabelcompactRtl
+{font-size:1em;}
+.ms-menuuilabelcompact
+{font-size:1em;}
+.ms-MenuUILabelRtL
+{font-size:1em;}
+.ms-MenuUILabel
+{font-size:1em;}
+.ms-cui-toolbar-toolbar
+{font-size:1em;}
+.ms-cui-TabRowLeft
+{font-size:1em;}
+.s4-breadcrumb-menu
+{font-size:1em;}
+.ms-siteactionsmenu
+{font-size:1em;}
+.ms-cui-menu
+{font-size:1em;}
+.ms-cui-ribbon
+{font-size:1em;}
+table.ms-disc td
+{color:inherit;}
+.ms-rtefield
+{color:inherit;}
+groupheader
+{color:inherit;}
+.medium
+{color:inherit;}
+.headertitle
+{color:inherit;}
+.level-description
+{color:inherit;}
+.ms-rteElement-P
+{color:inherit;}
+.ms-SPZoneLabel
+{color:inherit;}
+.ms-SPZoneTitle
+{color:inherit;}
+.tmt-name
+{color:inherit;}
+.ms-listedit .ms-gb .ms-vh2
+{color:inherit;}
+.ms-listedit .ms-gb .ms-vh2-nofilter
+{color:inherit;}
+.ms-listedit .ms-linksectionheader .ms-standardheader
+{color:inherit;}
+.ms-listedit .ms-linksectionheader
+{color:inherit;}
+.ms-listedit .ms-standardheader
+{color:inherit;}
+.ms-paging
+{color:inherit;}
+.ms-bottompaging .ms-paging
+{color:inherit;}
+.ms-createpageinformation table td
+{color:inherit;}
+.ms-pageinformation table td
+{color:inherit;}
+.ms-propertysheet
+{color:inherit;}
+.ms-ph
+{color:inherit;}
+.ms-vh2-nofilter-icon
+{color:inherit;}
+.ms-vh2-nograd-icon
+{color:inherit;}
+.ms-vh3-nograd
+{color:inherit;}
+.ms-vh2-nograd
+{color:inherit;}
+.ms-vhImage
+{color:inherit;}
+.ms-vh-icon-empty
+{color:inherit;}
+.ms-vh2
+{color:inherit;}
+.ms-vh
+{color:inherit;}
+th.ms-vh2-nograd-icon
+{color:inherit;}
+th.ms-vh2-nograd
+{color:inherit;}
+.ms-vh2-nofilter-icon
+{color:inherit;}
+th .ms-vb
+{color:inherit;}
+.ms-createpageinformation th
+{color:inherit;}
+.ms-pageinformation th
+{color:inherit;}
+.ms-linksectionheader
+{color:inherit;}
+.ms-linksectionheader .ms-standardheader
+{color:inherit;}
+.ms-pageinformation h3.ms-standardheader
+{color:inherit;}
+.ms-linksection-level1 h3
+{color:inherit;}
+.ms-sectionheader
+{color:inherit;}
+.link-item
+{color:inherit;}
+.description
+{color:inherit;}
+.ms-toolbarContainer
+{color:inherit;}
+.ms-formtoolbar
+{color:inherit;}
+.ms-descriptiontext
+{color:inherit;}
+.ms-formlabel
+{color:inherit;}
+.ms-vh2-nofilter-notextalign
+{color:inherit;}
+.ms-vh2-nofilter
+{color:inherit;}
+.s4-specialNavLinkList a:hover > span.ms-splinkbutton-text
+{color:inherit;}
+.ms-viewlsts-noitems > b
+{color:inherit;}
+.ms-vb2
+{color:inherit;}
+.ms-vb
+{color:inherit;}
+.ms-pb-selected td
+{color:inherit;}
+.ms-pb
+{color:inherit;}
+.ms-vb-user
+{color:inherit;}
+.ms-vb-tall
+{color:inherit;}
+.ms-gbload
+{color:inherit;}
+.ms-gb2
+{color:inherit;}
+.ms-gb
+{color:inherit;}
+.ms-standardheader
+{color:inherit;}
+.ms-gb .ms-standardheader
+{color:inherit;}
+.ms-listheaderlabel
+{color:inherit;}
+.ms-toolbar
+{color:inherit;}
+.s4-title .s4uniqpermdescription
+{color:inherit;}
+.s4-title .s4-pagedescription
+{color:inherit;}
+.welcome-content
+{color:inherit;}
+.article-content
+{color:inherit;}
+.s4-search input.ms-sbplain
+{color:inherit;}
+.s4-search select.ms-sbscopes
+{color:inherit;}
+.ms-socialNotif-text
+{color:inherit;}
+.s4-title h2
+{color:inherit;}
+.ms-viewlsts th.ms-vh2-nofilter
+{color:inherit!important;}
+a.ms-socialNotif
+{text-decoration:none;}
+.s4-specialNavLinkList a:hover > span.ms-splinkbutton-text
+{text-decoration:none;}
+.ms-menutoolbar td a:hover
+{text-decoration:none;}
+.ms-menutoolbar td a
+{text-decoration:none;}
+.ms-siteactionsmenu > span > a
+{text-decoration:none;}
+.ms-cui-menu a:active
+{text-decoration:none;}
+.ms-cui-menu a:hover
+{text-decoration:none;}
+.ms-cui-menu a:visited
+{text-decoration:none;}
+.ms-cui-menu a:link
+{text-decoration:none;}
+.ms-cui-ribbon a:active
+{text-decoration:none;}
+.ms-cui-ribbon a:hover
+{text-decoration:none;}
+.ms-cui-ribbon a:visited
+{text-decoration:none;}
+.ms-cui-ribbon a:link
+{text-decoration:none;}
+/* end css reset */

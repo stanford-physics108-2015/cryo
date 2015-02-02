@@ -1,0 +1,175 @@
+﻿.RadMenu_SP2007TopLevelNavigation
+{
+	background:#FFFFFF;
+}
+
+.RadMenu_SP2007TopLevelNavigation_Context
+{
+	background:none;
+	padding:0;
+}
+
+.RadMenu_SP2007TopLevelNavigation .link
+{
+	color:Black;
+	text-decoration:none;
+	padding: 2px 8px;
+}
+
+.RadMenu_SP2007TopLevelNavigation .topLevelMenuItem
+{
+	border:1px solid #CCCCFF;
+	background: #FFFFFF url(Img/RootItemBkg.gif) left top repeat-x;
+	margin-left: 1px;
+}
+
+.RadMenu_SP2007TopLevelNavigation .currentTopLevelMenuItem
+{
+	border:1px solid #6699FF;
+	background: #6699CC url(Img/CurrentRootItemBkg.gif) left top repeat-x;
+	margin-left: 1px;
+}
+
+.RadMenu_SP2007TopLevelNavigation .rootGroup .vertical .separator 
+{
+	padding:0;
+	margin:1px 0;
+}
+
+.RadMenu_SP2007TopLevelNavigation .rootGroup .vertical .separator span.text
+{
+	border-top:1px solid #6A8CCB;
+	margin-left: 28px;
+}
+
+.RadMenu_SP2007TopLevelNavigation .rootGroup .focused,
+.RadMenu_SP2007TopLevelNavigation .rootGroup .link:hover
+{
+	background: #FFCC66 url(Img/RootItemFocusedBkg.gif) left top repeat-x;
+	border:1px solid #CCCCFF;
+	text-decoration:none;
+}
+
+.RadMenu_SP2007TopLevelNavigation .rootGroup .disabled:hover,
+.RadMenu_SP2007TopLevelNavigation .rootGroup .disabled
+{
+	background:none;
+	border:0;
+	padding:3px 8px;	
+	color: #666;
+}
+
+.RadMenu_SP2007TopLevelNavigation .horizontal .expanded,
+.RadMenu_SP2007TopLevelNavigation .horizontal .expanded:hover
+{
+	background: url(Img/RootItemBkg.gif) left top repeat-x;
+	border:1px solid #CCCCFF;	
+}
+
+.RadMenu_SP2007TopLevelNavigation .vertical .expanded,
+.RadMenu_SP2007TopLevelNavigation .vertical .expanded:hover
+{
+	background:#93B5E7 left top repeat-x;
+	border:1px solid #CCCCFF;
+	padding:2px 7px;
+}
+
+.RadMenu_SP2007TopLevelNavigation .group
+{
+	border:1px solid #CCCCFF;
+	float:left;
+	background: #F6F6F6 url(Img/GroupBkg.gif) repeat-y;
+}
+
+.RadMenu_SP2007TopLevelNavigation .group .link
+{
+	padding:2px;
+}
+
+.RadMenu_SP2007TopLevelNavigation .group .item
+{
+	margin:0;
+	padding:1px;
+}
+
+.RadMenu_SP2007TopLevelNavigation .group .link:hover,
+.RadMenu_SP2007TopLevelNavigation .group .focused,
+.RadMenu_SP2007TopLevelNavigation .group .expanded
+{
+	background-color:#FFEEC2;
+	background-image:none;
+	border:1px solid #CCCCFF;
+	padding:1px;
+}
+
+.RadMenu_SP2007TopLevelNavigation .group .disabled:hover,
+.RadMenu_SP2007TopLevelNavigation .group .disabled
+{
+	background-color:transparent;
+	background-image:none;
+	border:0;
+	padding:2px;
+	color: #ccc;
+}
+
+.RadMenu_SP2007TopLevelNavigation .group .text
+{
+	padding-left:25px;
+	text-align:left;
+	padding-right:46px;
+}
+
+.RadMenu_SP2007TopLevelNavigation .expandLeft,
+.RadMenu_SP2007TopLevelNavigation .expandRight
+{
+	background:transparent url(img/groupImage.gif) right center no-repeat;
+	padding-right:10px;
+}
+
+.RadMenu_SP2007TopLevelNavigation_rtl .expandLeft,
+.RadMenu_SP2007TopLevelNavigation_rtl .expandRight
+{
+	background:transparent url(img/groupImageRTL.gif) left center no-repeat;
+}
+
+.RadMenu_SP2007TopLevelNavigation .topArrow,
+.RadMenu_SP2007TopLevelNavigation .topArrowDisabled,
+.RadMenu_SP2007TopLevelNavigation .rightArrow,
+.RadMenu_SP2007TopLevelNavigation .rightArrowDisabled,
+.RadMenu_SP2007TopLevelNavigation .leftArrow,
+.RadMenu_SP2007TopLevelNavigation .leftArrowDisabled,
+.RadMenu_SP2007TopLevelNavigation .bottomArrow,
+.RadMenu_SP2007TopLevelNavigation .bottomArrowDisabled
+{
+	height:16px;
+}
+
+.RadMenu_SP2007TopLevelNavigation .rightArrow,
+.RadMenu_SP2007TopLevelNavigation .rightArrowDisabled
+{
+	background: #F6F6F6 url('img/right.gif') center center no-repeat;
+	width:25px;
+	height:100%;
+}
+
+.RadMenu_SP2007TopLevelNavigation .leftArrow,
+.RadMenu_SP2007TopLevelNavigation .lefttArrowDisabled
+{
+	background: #F6F6F6 url('img/left.gif') center center no-repeat;
+	width:25px;
+	height:100%;
+}
+
+.RadMenu_SP2007TopLevelNavigation .topArrow,
+.RadMenu_SP2007TopLevelNavigation .topArrowDisabled
+{
+	background: #e3efff url('img/top.gif') center center no-repeat;
+	width: 100%;
+}
+
+.RadMenu_SP2007TopLevelNavigation .bottomArrow,
+.RadMenu_SP2007TopLevelNavigation .bottomArrowDisabled
+{
+	background: #e3efff url('img/bottom.gif') center center no-repeat;
+	width: 100%;
+}

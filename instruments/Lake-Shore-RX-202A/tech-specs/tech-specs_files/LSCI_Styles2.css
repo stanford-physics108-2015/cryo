@@ -1,0 +1,1214 @@
+﻿/* a global style reset was done in another style sheet called CSS_Reset.css */
+/*///// begin body series ///// */
+.whitebordertable {
+	border: 1px solid #FFF !important;
+}
+.graybordertable {
+	border: 1px solid #c5c5c5 !important;
+}
+
+#PlaceHolderTopNavBar {
+width:362px !important;
+}
+
+body {
+	background-color: #e2e2e2;
+	margin: 0px;
+	height: 100%;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+}
+body #s4-workspace {
+	background-color: #e2e2e2;
+	background-image:url('http://www.lakeshore.com/publishingimages/BackGradient.png') !important;
+	background-repeat:repeat-x;
+}
+/* remove blue border around image links */
+body img{
+	border:none;
+}
+/* fix white line of pixels in banner image */
+#onetidHeadbnnr2 {
+	border: 1px solid #e2e2e2 !important;
+}
+/* ////////// Styles in the Markup Styles Dropdown /////////*/
+p.ms-rteElement-pBarHeading4 {
+	-ms-name: "Blue Background text";
+	color: white;
+	background-color:#5e5e5e;
+	padding: 2px;
+	width:100%;
+	font-size: 12px;
+	font-weight: bold;
+	font-family: Arial, Helvetica, sans-serif;
+}
+.barheading {
+	color: white;
+	background-color: #e2e2e2;
+	padding: 2px 0px 2px 7px;
+	width:auto;
+	font-size: 14px;
+	font-family: Arial, Helvetica, sans-serif;
+	margin-top: 12px;
+}
+h3.ms-rteElement-h3BarHeading1 {
+	-ms-name:"Blue Bar Heading";
+	color: white;
+	background-color: #003057;
+	padding: 2px 0px 2px 7px;
+	width:auto;
+	font-size: 14px;
+	font-family: Arial, Helvetica, sans-serif;
+}
+h3.ms-rteElement-h3BarHeading2 {
+	-ms-name:"Gray Bar Heading";
+	color: white;
+	background-color:#666666;
+	padding: 2px;
+	width:100%;
+	font-size: 14px;
+	font-family: Arial, Helvetica, sans-serif;
+}
+h3.ms-rteElement-h3BarHeading3 {
+	-ms-name:"Light Blue Bar Heading";
+	color: black;
+	background-color:#d8e0ec;
+	padding: 2px;
+	width:100%;
+	font-size: 14px;
+	font-family: Arial, Helvetica, sans-serif;
+}
+.bodytext {
+	-ms-name:"Body Text";
+	color:black;
+}
+p.ms-rteElement-pBodyText {
+	-ms-name:"Body Text";
+	color:black;
+}
+.nh {
+	font-size: 14px !important;
+	color: black !important;
+	font-weight: bold !important;
+	font-family: Calibri, Arial, Helvetica, sans-serif !important;	
+}
+h3.ms-rteElement-h5NormalHeading {
+	-ms-name:"Normal Heading";
+	font-size: 14px;
+	color: black;
+	font-weight: bold;
+	font-family: Arial, Helvetica, sans-serif;	
+}
+h5.ms-rteElement-h5NormalHeading {
+	-ms-name:"Normal Heading";
+	font-size: 14px;
+	color: black;
+	font-weight: bold;
+	font-family: Arial, Helvetica, sans-serif;	
+}
+h5.ms-rteElement-h5NormalHeading2 {
+	-ms-name:"Blue Heading";
+	font-size: 14px;
+	color: #e2e2e2;
+	font-weight: bold;
+	font-family: Arial, Helvetica, sans-serif;	
+}
+span.ms-rteElement-spanItalics {
+	-ms-name: "Italics";
+	font-style: italic;
+	color: black;
+}
+.SquareBullets {
+	list-style-type: square;
+	color: black !important;
+}
+li.ms-rteElement-liSquareBullets {
+	-ms-name: "Square Bullets";
+	list-style-type: square;
+	color: black;
+}
+/* change list style to square bullets in model features */
+.ModelFeatures ul li {
+	list-style: square;
+}
+h3.ms-rteElement-h3OIHeading {
+	-ms-name: "Orange Heading";
+	color: #d87900;
+	font-weight: bold;
+	font-size: 14px;
+	font-family: Arial, Helvetica, sans-serif;
+}
+p.ms-rteElement-pIndent {
+	-ms-name: "Indent";
+	padding-left: 10px;
+	font-family: Tahoma;
+}
+span.ms-rteElement-spanIndent2 {
+	-ms-name: "Indent Span";
+	padding-left: 10px;
+}
+ol.ms-rteElement-olOtherOL {
+	-ms-name: "Ordered List";
+	color: red;
+}
+ol.ms-rteElement-olOtherOL {
+	-ms-name: "Ordered List";
+	color: red;
+}
+
+/* table for ms-rte styling
+.ms-rteTable-LSCI1 {
+	border: 1px solid white;
+  -ms-name: "LSCI Table";
+  text-align:center;
+  background-color:#e2e4d3;
+}
+.ms-rteTableHeaderRow-LSCI1 {
+	background-color: #e2e2e2;
+	text-align:center;
+	color: white;
+	vertical-align: middle;
+	font-weight: bold;
+}*/
+/* end markup dropdown table style */
+/* ////////// end ms-rte styles ////////// */
+
+/* model landing page */
+.MLTable {
+	background-color: White;
+	border: 3px solid white;
+	width: 100%;
+	text-align:center;
+}
+.MLInsideTable {
+	background-color: #e2e2e2;
+}
+.MLBorderCell {
+	border: 6px solid white !important;
+	background-color: #e2e2e2;
+}
+.MLTitleCell {
+	background-color:#174162;
+	color: white !important;
+	height: 20px;
+	font-size: 14px !important;
+	text-align:center;
+	font-weight: bold;
+	vertical-align: middle;
+	margin-top: 3px;
+}
+.MLTitleCell a {
+	color:white !important;
+}
+.MLTitle {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+}
+DIV.MLTitleHeading {
+	font-family: Calibri, Arial, Helvetica, sans-serif !important;
+	font-weight: bold !important;
+	color:black !important;
+	font-size: 200% !important;
+}
+.MLTextLink {
+	text-align:center;
+	padding-left:10px;
+	padding-right:10px;
+	font-size: 13px;
+	color: #0072bc;
+	font-family: Arial, Helvetica, sans-serif;
+	margin-bottom: 20px;
+}
+.MLFeatures {
+	text-align: left;
+	line-height:1em !important;
+	margin-bottom: 3px !important;
+	color: black;
+	font-size: 12px;
+	font-family: Calibri, Arial, Helvetica, sans-serif !important;
+	list-style: square;
+}
+.MLFeatures ul li {
+	list-style: square;
+}
+.MLFeatures h3 {
+	padding-left: 25px;
+	padding-right: 20px;
+}
+.MLDescription {
+	text-align: left;
+	color: black;
+	font-size: 12px;
+	font-family: Arial, Helvetica, sans-serif;
+	list-style: square;
+}
+.MLAvailabilityCell {
+	padding: 5px;
+}
+.MLFeatures {
+	padding: 5px;
+}
+.MLDescription {
+	padding: 5px;
+}
+.MLAvailabilityCell, .MLAvailability {
+	color: red;
+	font-weight: bold;
+	font-size: 18px;
+}
+.availability {
+	color: red;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 16px;
+}
+/*.ms-rteTableOddRow-LSCI1 {
+	color:black;
+	background:#FFFFDD;
+}
+.ms-rteTableEvenRow-LSCI1 {
+	color:black;
+	background:#FFB4B4;
+}*/
+/* end model landing page */
+/* begin model overview page */
+.ModelImageCell, .ModelImage {
+	text-align:center;
+	padding-top: 15px;
+}
+.MOverview {
+	margin-top: 9px;
+}
+/* end model overview styling */
+/* majority of tables table styling */
+
+.snovTable {
+	margin-top: 8px;
+}
+.snovTableHead {
+	background-color: #003057;
+	text-align:center;
+	color: white !important;
+	vertical-align: middle !important;
+	font-weight: normal;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 14px !important;
+	padding: 0px 0px 0px 5px;
+	line-height: 1.8em;
+}
+.snovSubcat {
+	background-color: #0072bc;
+	color: white !important;
+	font-weight: bold;
+	text-align: left !important;
+	font-family: Calibri, Arial, Helvetica, sans-serif !important;
+	font-size: 14px !important;
+	height: 15px;
+	line-height: 1.8em;
+}
+th.snovSubCat {
+	height: 15px;
+}
+.defaultTable th {
+	border: 1px solid white;
+	text-align: center;
+}
+.defaultTable td {
+	border: 1px solid white;
+	text-align: center;
+}
+.defaultTable {
+	border: 1px solid white;
+	text-align: center;
+}
+.snovcellTitle {
+	text-align: left !important;
+}
+.defaultTable tr {
+	background-color: #b8b8b8;
+}
+.oddRows {
+	background-color: #d8e0ec !important;
+}
+.ms-alternating {
+	background-color: #d8e0ec !important;
+}
+.ms-alternating2 {
+	background-color: #bdc4d1 !important;
+}
+
+.evenRows {
+	background-color: #b8b8b8;
+}
+.O_Row {
+	height: 30px;
+}
+.snovTable tr td{
+	color: black;
+	line-height: 1.4;
+}
+.firstColumn {
+	font-weight: bold;
+}
+.snovTableHeadTS {
+	background-color:#0072bc; 
+	color:white;
+}
+.snovcell {
+	text-align: center;
+	color: black !important;
+}
+/* header for Similar Items web part */
+.aiiHeader {
+	color: #d87900;
+	font-weight: bold;
+	font-size: 14px;
+	padding: 0px;
+	margin: 0px;
+}
+.aiiHeaderCell {
+	padding: 0px;
+	margin: 0px;
+}
+.aiiHR {
+	border-top: 1px dotted # b4c3d1;
+	border-left: none;
+	border-right: none;
+	border-bottom: none;
+}
+/* top nav */
+.s4-pr {
+	width: 1100px;
+}
+#s4-bodyContainer {
+	width: 1100px !important;	
+	margin-left: auto !important;
+	margin-right: auto !important;
+}
+.s4-tn A.selected {
+	background: #e2e2e2 !important;
+	margin: 0px !important;
+	color: white !important;
+	border: none !important;
+}
+div #s4-topheader2 {
+	background: #e2e2e2 !important;
+	margin: 0px !important;
+	color: white !important;
+	border: none !important;
+}
+.menu-horizontal {
+	display: none;
+}
+.RadMenu {
+	float:right !important;
+}
+.RadMenu_SP2007TopLevelNavigation .group {
+	border: 1px solid #bfbfbf !important;
+}
+/* end top nav fixes */
+/*.ms-bodyareacell {
+	padding-left: 5px;
+	padding-right: 5px;
+}*/
+.s4-tn LI.static > .menu-item {
+	color: white;
+}
+div #s4-mainarea {
+	vertical-align: top;
+	background-color:#FFFFFF;
+}
+#bottomLinks {
+	text-align:center; 
+	margin-bottom: 10px;
+}
+.footer {
+	background-color: #FFFFFF;
+	font-size: 12px;
+	color: #4c7db7;
+	line-height:14px;
+	width: 100%;
+	text-align: center;
+ 	height: 32px;
+ 	margin-bottom: 10px;
+}
+/* remove margin */
+.s4-ca {
+	margin: 0px;
+}
+/*////////// search bar //////////////*/
+/* alignment */
+#searchLayout input { 
+	background: transparent url('http://www.lakeshore.com/PublishingImages/search.png') left no-repeat; 
+	padding-left: 25px; 
+}
+.ms-sbcell { 
+	background-color: white; 
+	border-color: white; 
+	font-size: 12pt;
+	font-family: Arial, Helvetica, sans-serif;
+	color: #C0C0C0;	
+}
+.s4-search input.ms-sbplain {
+	width: 172px !important;
+	background: white url('http://www.lakeshore.com/PublishingImages/search.png') left no-repeat; 
+	padding-left: 20px !important;
+	height: 19px !important;
+}
+.s4-search .ms-sbtable-ex {
+	margin: 1px;
+}
+.s4-search {
+	margin-right: 20px !important;
+	margin-top: 2px;
+}
+.s4-searchbox-QueryPrompt {
+	font-style: normal !important;
+	font-size: 12px !important;
+	font-family: Arial, Helvetica, sans-serif;
+	vertical-align: middle;	
+}
+.srch-gosearchimg {
+	display: none;
+}
+
+/*//////////// end seach styling ////////////*/
+
+/* make top banner fit */
+.s4-titletable {
+	height: 75px;
+}
+/* stretch ribbon full page width */
+#s4-ribbonrow{
+	width: 100%;
+}
+
+.s4-ribbonrowhidetitle{
+	width: 100%;
+}
+
+/*////// headings //////*/
+.homeHeading {
+	font-weight: bold;
+	color: #00205a;
+	font-size: 14px;
+	font-family: Arial, Helvetica, sans-serif;
+
+}
+.HomeHeadingLinked {
+	font-weight: bold;
+	color: #355787;
+	font-size: 14px;
+	font-family: Arial, Helvetica, sans-serif;
+}
+.rightRailLI {
+	margin-bottom:10px;
+}
+.largerLink {
+	color: blue !important;
+	font-size: 14px;
+}
+/* ordering page orange headings */
+.OIHeading {
+	color: #d87900;
+	font-weight: bold;
+	font-size: 14px;
+	font-family: Arial, Helvetica, sans-serif;
+}
+p{	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: black;
+}
+h5{
+	font-size: 12px;
+	color: black;
+	font-weight: bold;
+	font-family: Arial, Helvetica, sans-serif;
+}
+h4{	
+	font-size: 12px;
+	color: black;
+	font-weight: bold;
+	font-family: Arial, Helvetica, sans-serif;
+}
+h3{	
+	font-size: 14px;
+	color: black;
+	font-weight: bold;
+	font-family: Arial, Helvetica, sans-serif;
+}
+h2{	
+	font-size: 14px;
+	color: black;
+	font-weight: bold;
+	font-family: Arial, Helvetica, sans-serif;
+}
+h1{	
+	font-size: 16px;
+	color: black;
+	font-weight: bold;
+	font-family: Arial, Helvetica, sans-serif;
+}
+/*///// end headings /////*/
+/* square bullets for all unordered lists 
+ul li {
+	list-style-type: square;
+}*/
+/*///// link styling /////*/
+a{	
+	color: 	#0072bc !important;
+	text-decoration: none;
+}
+a:hover {
+	text-decoration: underline;
+	color: red;
+}
+a:visited {
+	text-decoration: none;
+	color: #355787;
+}
+/*///// end link styling /////*/
+/*body centered and sized */
+/* product page layout styles */
+.topzone {
+	margin:0px !important;
+	width: 100%;
+}
+/*//////// product master page //////*/
+DIV.leftbread {
+	float:left;
+	/*position:relative;*/
+	padding-left: 40px;
+	padding-top: 10px;
+}
+DIV.rightbread {
+	float:right;
+	position:relative;
+	padding-right: 10px;
+	padding-top: 10px;
+}
+DIV.Breadcrumb {
+	display: inline-block;
+	width: 100%;
+}
+/* product category pages */
+.prodLink a {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 14px;	
+	color: #0072bc !important;
+}
+.pcInnerTable {
+	font-family: Arial, Helvetica, sans-serif;
+	color: black;
+}
+.pcInnerTableProductsPage {
+	font-family: Arial, Helvetica, sans-serif;
+	color: black;
+}
+.pcDescCell {
+	padding: 3px 0px 0px 0px;
+	margin: 0px;
+	vertical-align: top;
+}
+.pcDescCell div {
+	padding: 3px 0px 0px 10px;
+	margin: 0px 0px 15px 0px;
+	vertical-align: top;
+}
+/*///////// home master /////////// */
+.topWrapper { 
+	background: #e2e2e2; 
+	width: 100%; 
+	display: inline-block;
+}
+.clear {
+	clear: both;
+}
+/* Tab styles for OMSOD Pages */
+ul#OMSOD_Tabs { 
+	text-align: center; 
+	font-size: 15px; 
+	font-family:Arial, Helvetica, sans-serif;
+	font-weight:bold;
+	border-bottom: 1px solid gray; 
+	list-style-type: none;
+	height: 27px;
+	padding: 0px;
+}
+ul#OMSOD_Tabs li { /* do not change */
+	display: inline;
+}
+ul#OMSOD_Tabs li a { /* settings for all tab links */
+	background: #999999;
+	color: white !important; /* set unselected tab link color as desired */
+	margin-right: 1px; /* set additional spacing between tabs as desired */
+	text-decoration: none;
+	border-bottom: none;
+	min-width: 191px;
+	height: 23px;
+	display:inline-block;
+	padding-top: 4px;
+}
+ul#OMSOD_Tabs a:hover { /* settings for hover effect */
+	background: #666666;
+}
+ul#OMSOD_Tabs .ActiveTab a{
+	background: #d87900 !important;
+}
+.tab3 {
+	color: #d87900 !important;
+}
+/* end tab styles */
+/* begin cart button styles */
+/*a.AddToCartButton{
+	background:url('http://www.lakeshore.com/PublishingImages/CartAdd.png') no-repeat;
+	height: 23px;
+	width: 101px;
+	color: white !important;
+	padding: 3px 0px 0px 17px;
+	font-size: 14px;
+	text-decoration:none;
+	display:inline-block;
+	margin-right: -14px;
+}
+a.ViewCartButton{
+	background:url('http://www.lakeshore.com/PublishingImages/CartView.png') no-repeat;
+	height: 23px;
+	width: 124px;
+	color: white !important;
+	padding: 3px 0px 0px 42px;
+	font-size: 14px;
+	text-decoration:none;
+	display:inline-block;
+	margin-right: -39px;*/
+}
+/* end cart buttons styles */
+/*/////// metadata nav & input screen over top of all zones ////////*/
+#mv-metaeditpanel {
+	z-index: 99;
+	background: white;
+}
+
+/* Padding settings for the alignment and positioning of the root menus */
+.item {
+  padding:0px 0px 0px 0px !important;
+  height:100%;
+}
+/* ///// Table Styles (keep these styles above the lead time styles in this style sheet for proper coloring) ///// */ 
+/* set cells of ordering page table */
+td .cellSet {
+	width: 20px;
+	text-align: center;
+}
+.orderingInnerTable, .accInc {
+	color: black;
+	font-size: 12px;
+	border-bottom: none !important;
+	border-top: none !important;
+	border-left: none !important;
+	border-right: none !important;
+}
+/* fix first cell of ordering page table */
+td .LeadTimeCell {
+	background-color:gray; 
+	color: white;
+}
+/* change "obsolete" text to red */
+.obsolete {
+	color: red !important;
+	padding: 0px;
+}
+/*//////////// Lead Time Colors for "ordering" page ///////////*/
+.Lead1 { background-color: #6c92c4 !important; text-align: center;}
+.Lead2 { background-color: #91bfdb !important; text-align: center;}
+.Lead3 { background-color: #ffffbf !important; text-align: center;}
+.Lead4 { background-color: #fee090 !important; text-align: center;}
+.Lead6 { background-color: #fc8d59 !important; text-align: center;}
+.Lead8 { background-color: #e46c6c !important; text-align: center;}
+.LeadConsult { background-color: #e0f3f8 !important; text-align: center;}
+.LeadNone {text-align: center; }
+/* end lead time colors */
+/*/////// packaging Options table styling //////////*/
+.alignBottom {
+	vertical-align: bottom !important;
+}
+.imageCell {
+	text-align: center;
+}
+table.packagingTableInner {
+	border: 1px solid white;
+	color: black;
+}
+table.packagingTableInner td{
+	border: 1px solid white;
+}
+.headerImage {
+	text-align:center;
+}
+.headerLastCell {
+	background-color: rgb(216, 224, 236);
+}
+.headerFirstCell {
+	background-color: rgb(216, 224, 236);
+}
+.headerImage {
+	background-color: rgb(216, 224, 236);
+}
+.headerLastCell {
+	vertical-align: bottom !important;
+	text-align:left;
+}
+.headerFirstCell {
+	vertical-align: bottom !important;
+	text-align:left;
+}
+a.packOptImage {
+	background: transparent url('http://www.lakeshore.com/PublishingImages/pack_option.png') left no-repeat; 
+	width: 106px;
+	height: 28px;
+	display: block;
+	text-indent: -99999px;
+}
+td.imageCell img {
+	margin: 0px !important;
+}
+img.po_Image {
+	height: auto;
+	width: 340px;
+}
+.packagingDeepInsideDataTable {
+	color: black;
+}
+/*////// home page //////*/
+/* center news */
+.newsDesc {
+	margin-left: 10px;
+	line-height: 1.6 !important;
+}
+.NewsLink {
+	margin-top: -12px;
+	margin-bottom: 11px;
+	margin-left: 10px;
+	line-height: 1.6 !important;
+}
+.newsTopLink {
+	font-weight:bold;
+	margin-left: 10px;
+	font-size: 14px;
+	font-family: Calibri, Arial, Helvetica, sans-serif;
+	line-height: 1em;
+}
+.moreLink {
+	font-size: 12px;
+	font-family: Arial, Helvetica, sans-serif;
+}
+.centerNewsOutsideTable {
+	position: relative;
+	left: -4px;
+}
+.centerNewsImageCell {
+	vertical-align: top;
+}
+.rightRailHome {
+	padding-right: 5px;
+}
+/*////////// image rotator position fix /////////////*/
+<!--/*	padding-right:37px;
+}*/
+
+#PicturePlaceholder {
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 10px;
+}
+div.nav {
+	position: absolute;
+	top: 94px; /*275px;*/
+	z-index: 99;
+	width: 762px;
+}
+div.leftNav {
+	float: left;
+	font-size: 50px;
+}
+div.rightNav {
+	float: right;
+	font-size: 50px;
+}
+a.leftNavLink {
+	background: transparent url('/PublishingImages/ArrowLeft.png') left no-repeat !important; 
+	width: 31px !important;
+	height: 26px !important;
+	display: block !important;
+	text-indent: -99999px !important;
+	outline: 0 !important;
+}
+a.leftNavLink:hover {
+	background: transparent url('/PublishingImages/ArrowLeftHover.png') left no-repeat !important;
+	width: 31px !important;
+	height: 26px !important;
+	display: block !important; 
+}
+a.rightNavLink {
+	background: transparent url('/PublishingImages/ArrowRight.png') left no-repeat !important; 
+	width: 31px !important;
+	height: 26px !important;
+	display: block !important; 
+	text-indent: -99999px !important;
+	outline: 0 !important;
+}
+a.rightNavLink:active {
+	border: none !important;
+}
+a.rightNavLink:hover {
+	background: transparent url('/PublishingImages/ArrowRightHover.png') left no-repeat !important; 
+	width: 31px !important;
+	height: 26px !important;
+	display: block !important; 
+}
+/* --- CYCLE JQUERY --- */
+.slideshow {position:relative;height:50px;overflow: hidden;}
+.slideshow img {display:block;height:193px;padding:5px;border:1px solid #ccc;background-color:#eee;}
+.SlideshowText {padding-left:5px;margin-bottom:10px;height:20px;}
+/* modal popup window styling */
+.ms-dlgTitle {
+	background-color: #e2e2e2 !important;
+}
+div.pics {
+	top:-26px;
+}
+@-moz-document url-prefix(){
+#slideshow{right:31px;}
+div.pics{top:0;}
+ }
+/* fix wierd gap between top and second web parts in right rail */
+.ms-PartSpacingVertical {
+	margin: 0px !important;
+}
+/* left links web part on home page */
+div.groupheader{
+	font-weight: bold;
+	margin-right: 5px;
+	margin-bottom: 0px;
+	padding-right: 5px !important;
+	padding-top: 10px !important;
+	font-weight: bold;
+	color: #313131;
+	font-size: 14px;
+	font-family: Arial, Helvetica, sans-serif;
+}
+div.groupmarker {
+	margin-bottom: 10px;
+}
+
+
+ul.dfwp-list li{
+	margin: 4px 0px 0px 0px;
+	padding-right: 5px;
+	font-family: Arial, Helvetica, sans-serif !important;
+	font-size:12px !important;
+}
+/* video page layout styles */
+.VideoZone {
+	text-align: center;
+}
+/* fix weird spacing issue around "discounted equipment" on home page */
+.link-item-large {
+	font-size: inherit;
+}
+/* recolor the "Discounted Equipment Link on the left rail in home page */
+.link-item-large a {
+	/*color: red !important;*/
+	font-size: 12px !important;
+	margin: 0px !important;
+	padding: 0px !important;
+	vertical-align: top;
+	height: 10px;
+}
+	font-size: 12px !important;
+	margin: 0px !important;
+	padding: 0px !important;
+	vertical-align: top;
+	height: 10px;
+}
+/* styles for the discounted equipment table */
+.deInnerTable {
+	color: black;
+	line-height: 1.8em;
+}
+.ms-vb deDescCell {
+	color: black;
+}
+.ms-vb {
+	color: black;
+}
+.wrapword{
+	white-space: -moz-pre-wrap !important; /* Mozilla, since 1999 */
+	white-space: -pre-wrap;   /* Opera 4-6 */
+	white-space: -o-pre-wrap;  /* Opera 7 */
+	white-space: pre-wrap;    /* css-3 */
+	word-wrap: break-word;    /* Internet Explorer 5.5+ */
+}
+.deEmailCell {
+	text-align: center;
+}
+.deInvCell {
+	text-align: center;
+}
+.dePriceCell {
+	text-align: center;
+}
+.deHead {
+	background-color: #0072bc;
+	text-align:center;
+	color: white !important;
+	font-weight: normal;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 14px !important;
+	padding: 0px 0px 0px 5px;
+	line-height: 1.8em;
+	vertical-align: bottom !important;
+}
+/* styles for the repair tables */
+.rpInnerTable, .rp2InnerTable, .rp3OutterTable {
+	color: black;
+}
+/* fix one pixel issue on header */
+.ms-titlerowborder {
+	border: none !important;
+}
+.s4-title {
+	padding: 0px !important;
+}
+/* adjust image rotator on home page */
+#slideshowContentArea {
+	top: -3px;
+	right: -3px;
+}
+.homeBullets li{
+	margin-left: -25px;
+	list-style: square;
+	color: black;
+	margin-bottom: 5px;
+	font-weight: normal;
+}
+.prInnerTable {
+	margin-top: 10px;
+}
+/* end home page styles */
+/*adjust front and back panel link */
+span.frontPanel {
+	padding-left: 15px;
+}
+span.backPanel {
+	margin-right: 15px;
+}
+/* styles for info path forms */
+.l_7qitEFy4y4sTSIlu_0 {
+	border-collapse: separate !important;
+}
+/* adjust model landing image */
+.MLImageLink img{
+	height: auto;
+	width: 255px;
+	padding-top: 10px;
+	text-align: center;
+}
+/* change color of site actions drop down */
+.ms-menu-a {
+	color: white !important;
+}
+/* fix formatting on bottom of model landing */
+.bottomCell {
+	padding: 10px 0px 20px 0px;
+}
+.tableWrapperTag {
+	padding-right: 10px;
+}
+/* style on hidden login wrapper */
+div.customTopLeft {
+	text-align: right !important;
+	float: right !important;
+	position: relative;
+	top: 40px;
+}
+/*///////// sales rep web part ////////////*/
+.contactTable {
+	color: black;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 13px;
+	vertical-align: top;
+	width:100%;
+}
+.informationTable {
+	color: black;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 13px;
+	vertical-align: top;
+	width:100%;
+}
+.flagTable {
+	color: black;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 13px;
+	vertical-align: top;
+	width:100%;
+}
+.titleCell {
+	font-weight: bold;
+	font-size: 14px;
+}
+.noteCell {
+	font-weight: bold;
+	color: #4c7db7;
+}
+.flagCell3 {
+	text-align: center;
+	padding-bottom:5px;
+}
+.flagCell2 {
+	text-align: center;
+	padding-bottom:5px;
+}
+.flagCell1 {
+	text-align: center;
+	padding-bottom:5px;
+}
+.spacerCell {
+	height: 15px;
+}
+/* /// Press releases styles ///*/
+.page-title {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 18px;
+	color: black;
+	font-weight: bold;
+	padding-bottom: 5px;
+}
+.article-content {
+	color: black;
+	font-size: 12px;
+	font-family: Arial, Helvetica, sans-serif;
+}
+table.prInnerTable {
+	color: black;
+	margin-top: 10px;
+}
+
+/* faq styles */
+div.answer, div.Models {
+	color: black;
+}
+div.question, div.prodCats {
+	color: black;
+	background-color: #d8e0ec;
+	width: 100%;
+	display: block;
+	color: #2763a5;
+	cursor: pointer;
+	letter-spacing: normal;
+	padding: 4px 0px 4px 0px;
+	line-height: 20px;
+	font-family: Arial, Helvetica, sans-serif;
+	border-left: 1px dotted #d7e1ef;
+	border-top: 1px dotted #d7e1ef;
+	font-weight: bold;
+}
+div.prodCatsHeader {
+	color:black;
+	background-color:#0072bc;
+	width: 100%;
+	display: block;
+	color: white;
+	letter-spacing: normal;
+	padding: 4px 0px 4px 0px;
+	line-height: 20px;
+	font-family: Arial, Helvetica, sans-serif;
+	font-weight: bold;
+	margin-bottom: 4px;
+	font-size: 14px;
+}
+div.prodCats span, div.prodCatsHeader span {
+	padding-left: 8px;
+}
+div.faq .question:hover, div.prodCats:hover {
+	color: #008adf;
+	background-color: rgb(241, 245, 249);
+}
+div.faq .answer, div.Models {
+	padding: 6px 0px 8px 34px;
+}
+/* fix temp sensor prod landing */
+.indent {
+	padding-left: 25px;
+}
+/* site map/table-of-contents web part styling */
+.level-bullet {
+	background-image:none !important;
+	padding-left:13px;
+	margin-left:0px !important;
+	font-family:calibri;
+	font-size:10pt !important;
+	padding-top:2px !important;
+	padding-bottom:2px !important;
+}
+.headertitle-small a:link {
+	font-weight:normal;
+	font-family:calibri;
+	font-size:10pt;
+}
+/* end site map styles */
+/* product registration link on home page style fixes */
+div.ProdReg {
+	padding-top: 3px;
+	padding-left: 1px;
+}
+/* generic */
+.center {
+	text-align: center !important;
+}
+/* table style for ribbon created tables */
+.ms-rteTable6 {
+	font-family: Arial, Helvetica, sans-serif;
+	color: black;
+	border: 1px solid white;
+}
+.ms-rteTableHeaderFirstCol-6 {
+	border: 1px solid white;
+}
+/* fix line height of all table cells with these classes (which is nearly all) */
+.ms-vb, .accInc tr td {
+	line-height: 1.5em;
+}
+/* tranlate footer styles */
+.translateWrapper {
+	position:relative; 
+	height: 30px; 
+	border: none;
+	background-color:#5e5e5e;
+	width: 100%; 
+}
+.translateInner {
+	text-align: center; 
+	position: absolute; 
+	bottom: 5px; 
+	width: 100%;
+}
+.langLink {
+	cursor: hand;
+}
+/* end translate footer styles */
+.oiInnerTable {
+	margin-left: 1px;
+}
+.tspDataOutter {
+	padding: 5px;
+	color: black;
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Press Release fix */
+div.article {
+	padding: 10px 40px;
+}
+
+
