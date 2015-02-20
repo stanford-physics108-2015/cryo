@@ -15,13 +15,9 @@ import visa
 # initialize colorama
 colorama.init(autoreset=True)
 
-# latency of controller's reaction to user input and internal messages/signals
-# i.e., time increment of various event listeners
-LATENCY = 0.05
-
-# time to wait before error reporting when a message or due is due
-CONTROLLER_TIMEOUT = LATENCY * 10 # for controller subprocesses
-COORDINATOR_TIMEOUT = LATENCY * 20 # for the main coordinating process
+# timeout wait before error reporting when a message or object is due
+CONTROLLER_TIMEOUT  = 0.5 # for controller subprocesses
+COORDINATOR_TIMEOUT = 2.0 # for the main coordinating process
 
 ######################### INTERNAL MESSAGING INTERFACE #########################
 # POWER SUPPLY
@@ -109,6 +105,7 @@ class InstrumentController(mp.Process):
     # _listener   - the other end of messenger's pipe
 
     def __init__(self, instrument):
+        #!
         # if not isinstance(instrument, visa.Resource):
         #     err_msg = 'instrument has type %s, not visa.Resource' % \
         #               type(instrument).__name__
@@ -120,26 +117,94 @@ class InstrumentController(mp.Process):
 class PowerSupplyController(InstrumentController):
 
     def __init__(self):
+        #!
         InstrumentController.__init__(self, None)
         # InstrumentController.__init__(self, gpib.PowerSupply())
         # self._instrument.initialize()
 
     def run(self):
-        pass
+        instrument = self._instrument
+        listener = self._listener
+        while True:
+            msg = listener.recv()
+            if msg == 'ramp':
+                if listener.poll(CONTROLLER_TIMEOUT):
+                    target_current = listener.recv()
+                    assert isinstance(target_current, float) or \
+                           isinstance(target_current, int)
+                else:
+                    listener.send('lacking arguments')
+
+                if listener.poll(CONTROLLER_TIMEOUT):
+                    ramping_rate = listener.recv()
+                    assert isinstance(ramping_rate, float) or \
+                           isinstance(ramping_rate, int)
+                else:
+                    listener.send('lacking arguments')
+
+                listener.send('ramping started')
+                #! ########## begin proof-of-concept code block ##########
+                interrupted = False
+                for i in range(1, 100):
+                    if listener.poll():
+                        msg = listener.recv()
+                        if msg == 'interrupt':
+                            interrupted = True
+                            sys.stderr.write(Fore.GREEN + "INTERRUPTED\n")
+                            listener.send('interrupted')
+                            break
+                        else:
+                            listener.send('ramping in progress')
+                    time.sleep(0.05)
+
+                if not interrupted:
+                    sys.stderr.write(Fore.GREEN + "RAMPING COMPLETED\n>> ")
+                #! ########## end proof-of-concept code block ##########
+                #! hand control to gpib.py (which will deal with the 'interrupt'
+                #! command and ignore all others)
+                # instrument.ramp_current(listener, target_current, ramping_rate)
+            elif msg == 'interrupt':
+                listener.send('nothing to interrupt')
+            elif msg == 'finish':
+                listener.send('stopped')
+                return True
+            else:
+                listener.send('unknown message "%s"' % msg)
 
 class LockInController(InstrumentController):
 
     def __init__(self):
+        #!
         InstrumentController.__init__(self, None)
         # InstrumentController.__init__(self, gpib.LockIn())
-        pass
+        # self._instrument.initialize()
 
     def run(self):
-        pass
+        instrument = self._instrument
+        listener = self._listener
+        #! ########## begin proof-of-concept code block ##########
+        while True:
+            msg = listener.recv()
+            if msg == 'finish':
+                listener.send('stopped')
+                return True
+            else:
+                listener.send('unknown message "%s"' % msg)
+        #! ########## end proof-of-concept code block ##########
+        #! start collecting data
+        #! hand control to gpib.py (which will deal with the 'finish' command)
+        # instrument.collect_data(listener)
 
 def console_control(verbose_prompt=True):
     psc = PowerSupplyController()
     lic = LockInController()
+
+    # save the intruments but do not tamper with them
+    # will be returned at the end of console_control so that recorded data could
+    # be extracted
+    power_supply = psc._instrument
+    lock_in = lic._instrument
+
     psc.start()
     lic.start()
     pscm = psc.messenger
@@ -238,7 +303,7 @@ def console_control(verbose_prompt=True):
             if pscm.poll(COORDINATOR_TIMEOUT):
                 msg = pscm.recv()
                 if msg == 'stopped':
-                    ps_stopped == True
+                    ps_stopped = True
                     status = 0
                 elif msg == 'ramping in progress':
                     sys.stderr.write(Fore.RED + "error: command ignored due to ongoing ramping; please wait or interrupt\n")
@@ -264,7 +329,7 @@ def console_control(verbose_prompt=True):
             if licm.poll(COORDINATOR_TIMEOUT):
                 msg = licm.recv()
                 if msg == 'stopped':
-                    li_stopped == True
+                    li_stopped = True
                     status = 0
                 else:
                     sys.stderr.write(Fore.YELLOW + "internal warning: unknown message '%s' received from the lock-in controller\n" % msg)
@@ -298,9 +363,8 @@ def console_control(verbose_prompt=True):
             sys.stderr.write(Fore.RED + "error: unknown command '%s'\n\n" % console_input)
 
         # end of console input cycle
-        time.sleep(LATENCY)
 
-    return (psc, lic)
+    return (power_supply, lock_in)
 
 if __name__ == "__main__":
     console_control(verbose_prompt=False)
