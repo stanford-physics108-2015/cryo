@@ -16,7 +16,83 @@ import visa
 colorama.init(autoreset=True)
 
 # latency of controller's reaction to user input and internal messages/signals
-LATENCY = 0.1
+# i.e., time increment of various event listeners
+LATENCY = 0.05
+
+# time to wait before error reporting when a message or due is due
+CONTROLLER_TIMEOUT = LATENCY * 10 # for controller subprocesses
+COORDINATOR_TIMEOUT = LATENCY * 20 # for the main coordinating process
+
+######################### INTERNAL MESSAGING INTERFACE #########################
+# POWER SUPPLY
+# ############
+#
+# Command
+#     r[amp] TARGET_CURRENT RAMPING_RATE
+#
+# Control message and objects
+#     ramp
+#     TARGET_CURRENT - float
+#     RAMPING_RATE   - float
+#
+# Response messages
+#     ramping started
+#         On successful commencement of ramping.
+#     ramping in progress
+#         If there is ramping ongoing.
+#     lacking arguments
+#         If the required object(s) is not received by the controller after a
+#         timeout.
+#
+# Command
+#     i[nterrupt]
+#
+# Control message
+#     interrupt
+#
+# Response messages
+#     interrupted
+#         On successful interruption of ramping.
+#     nothing to interrupt
+#         If there is no ramping ongoing.
+#
+# Command
+#     f[inish]
+#
+# Control message
+#     finish
+#
+# Response messages
+#     stopped
+#         On successful exit of the controller.
+#     ramping in progress
+#         If there is ramping ongoing. This is a protective feature, avoiding
+#         accidentally termination when ramping hasn't finished.
+#
+# Command
+#     k[ill]
+#
+# No control message sent. Terminate the controller process by force.
+#
+#
+# LOCK-IN
+# #######
+#
+# Command
+#     f[inish]
+#
+# Control message
+#     finish
+#
+# Response messages
+#     stopped
+#         On successful exit of the controller.
+#
+# Command
+#     k[ill]
+#
+# No control message sent. Terminate the controller process by force.
+################################################################################
 
 class InstrumentController(mp.Process):
     """Controller for a pyvisa instrument.
@@ -69,16 +145,16 @@ def console_control(verbose_prompt=True):
     pscm = psc.messenger
     licm = lic.messenger
     long_prompt = """Please type in one of the following commands:
-   * r(amp) TARGET_CURRENT RAMPING_RATE
+   * r[amp] TARGET_CURRENT RAMPING_RATE
         ramp up/down current output of the power supply
-   * i(nterrupt)
+   * i[nterrupt]
         interrupt ramping (only useful when ramping is in progress)
-   * f(inish)
+   * f[inish]
         finish experiment and terminate controllers
-   * k(ill)
+   * k[ill]
         terminate controllers
 """
-    short_prompt = "Commands: r(amp) TARGET_CURRENT RAMPING_RATE, i(nterrupt), f(inish), or k(ill)\n"
+    short_prompt = "Commands: r[amp] TARGET_CURRENT RAMPING_RATE, i[nterrupt], f[inish], or k[ill]\n"
     status = 0 # status of last command, 0 if successful, 1 if failed
     while True:
         # prompt for and read console input
@@ -119,7 +195,7 @@ def console_control(verbose_prompt=True):
             pscm.send(target_current)
             pscm.send(ramping_rate)
             # wait for response
-            if pscm.poll(LATENCY * 10):
+            if pscm.poll(COORDINATOR_TIMEOUT):
                 msg = pscm.recv()
                 if msg == 'ramping started':
                     sys.stderr.write(Fore.GREEN + "ramping started\n\n")
@@ -128,7 +204,7 @@ def console_control(verbose_prompt=True):
                     sys.stderr.write(Fore.RED + "error: command ignored due to ongoing ramping; please wait or interrupt\n\n")
                     status = 1
                 elif msg == 'lacking arguments':
-                    sys.stderr.write(Fore.RED + "internal error: the power supply controller did not receive the ramping arguments\n\n")
+                    sys.stderr.write(Fore.RED + "internal error: the power supply controller did not receive the required arguments\n\n")
                 else:
                     sys.stderr.write(Fore.YELLOW + "internal warning: unknown message '%s' received from the power supply controller\n\n" % msg)
                     status = 1
@@ -139,7 +215,7 @@ def console_control(verbose_prompt=True):
         elif console_input[0] == 'i':
             # interrupt
             pscm.send('interrupt')
-            if pscm.poll(LATENCY * 10):
+            if pscm.poll(COORDINATOR_TIMEOUT):
                 msg = pscm.recv()
                 if msg == 'interrupted':
                     sys.stderr.write(Fore.GREEN + "interrupted\n\n")
@@ -159,7 +235,7 @@ def console_control(verbose_prompt=True):
             # terminate power supply controller
             pscm.send('finish')
             ps_stopped = False
-            if pscm.poll(LATENCY * 10):
+            if pscm.poll(COORDINATOR_TIMEOUT):
                 msg = pscm.recv()
                 if msg == 'stopped':
                     ps_stopped == True
@@ -185,7 +261,7 @@ def console_control(verbose_prompt=True):
             # terminate lock-in controller
             licm.send('finish')
             li_stopped = False
-            if licm.poll(LATENCY * 10):
+            if licm.poll(COORDINATOR_TIMEOUT):
                 msg = licm.recv()
                 if msg == 'stopped':
                     li_stopped == True
