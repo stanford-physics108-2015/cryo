@@ -12,9 +12,9 @@ import visa
 
 _VISA_PATH = '/cygdrive/c/Windows/System32/visa32.dll'
 _manager = visa.ResourceManager(_VISA_PATH)
-_programmer = _manager.get_instrument('') #!
-_power_supply = _manager.get_instrument('') #!
-_lock_in = _manager.get_instrument('') #!
+_programmer = _manager.get_instrument('GPIB0::22::INSTR')
+_power_supply = _manager.get_instrument('GPIB0::5::INSTR')
+_lock_in = _manager.get_instrument('GPIB0::18::INSTR')
 
 class _Programmer(object):
     """Wrapper around AMI 420 programmer's GPIB interface.
@@ -138,7 +138,7 @@ class _Programmer(object):
                 self.record_current(wait=True)
 
             # check messages
-            if messenger.poll(self.sampling_interval / 2):
+            if messenger is not None and messenger.poll(self.sampling_interval / 2):
                 msg = messenger.recv()
                 if msg == 'interrupt':
                     try:
