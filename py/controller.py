@@ -10,7 +10,7 @@ import colorama
 from colorama import Fore
 import visa
 
-# import gpib
+#! import gpib
 
 # initialize colorama
 colorama.init(autoreset=True)
@@ -51,6 +51,24 @@ COORDINATOR_TIMEOUT = 2.0 # for the main coordinating process
 #         On successful interruption of ramping.
 #     nothing to interrupt
 #         If there is no ramping ongoing.
+#
+# Command
+#     l[ock]
+#
+# Control message
+#     lock
+#
+# Response messages
+#     None.
+#
+# Command
+#     u[nlock]
+#
+# Control message
+#     unlock
+#
+# Response messages
+#     None.
 #
 # Command
 #     f[inish]
@@ -141,9 +159,8 @@ class PowerSupplyController(InstrumentController):
                            isinstance(ramping_rate, int)
                 else:
                     listener.send('lacking arguments')
-
-                listener.send('ramping started')
                 #! ########## begin proof-of-concept code block ##########
+                listener.send('ramping started')
                 interrupted = False
                 for i in range(1, 100):
                     if listener.poll():
@@ -165,6 +182,14 @@ class PowerSupplyController(InstrumentController):
                 # instrument.ramp_current(listener, target_current, ramping_rate)
             elif msg == 'interrupt':
                 listener.send('nothing to interrupt')
+            elif msg == 'lock':
+                #!
+                # instrument.lock()
+                sys.stderr.write(Fore.GREEN + "LOCKED\n>> ")
+            elif msg == 'unlock':
+                #!
+                # instrument.unlock()
+                sys.stderr.write(Fore.GREEN + "UNLOCKED\n>> ")
             elif msg == 'finish':
                 listener.send('stopped')
                 return True
@@ -214,6 +239,10 @@ def console_control(verbose_prompt=True):
         ramp up/down current output of the power supply
    * i[nterrupt]
         interrupt ramping (only useful when ramping is in progress)
+   * l[ock]
+        disable front panel controls of the programmer
+   * u[nlock]
+        enable front panel controls of the programmer
    * f[inish]
         finish experiment and terminate controllers
    * k[ill]
@@ -294,6 +323,16 @@ def console_control(verbose_prompt=True):
             else:
                 sys.stderr.write(Fore.YELLOW + "internal warning: no response message from the power supply controller\n\n")
                 status = 1
+
+        elif console_input[0] == 'l':
+            # lock
+            pscm.send('lock')
+            status = 0
+
+        elif console_input[0] == 'u':
+            # unlock
+            pscm.send('unlock')
+            status = 0
 
         elif console_input[0] == 'f':
             # finish
