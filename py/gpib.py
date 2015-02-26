@@ -1,188 +1,281 @@
 #!/usr/bin/env python
 
-"""Control interface of GPIB instruments."""
+"""Control interface for GPIB instruments."""
 
 from __future__ import division
+from __future__ import print_function
 
-import sys
 import time
 import warnings
 
 import visa
 
 _VISA_PATH = '/cygdrive/c/Windows/System32/visa32.dll'
-_manager = visa.ResourceManager(_VISA_PATH)
-_programmer = _manager.get_instrument('GPIB0::22::INSTR')
-_power_supply = _manager.get_instrument('GPIB0::5::INSTR')
-_lock_in = _manager.get_instrument('GPIB0::18::INSTR')
+_instrument_manager = visa.ResourceManager(_VISA_PATH)
 
-class _Programmer(object):
-    """Wrapper around AMI 420 programmer's GPIB interface.
+class _GPIBInstrument(object):
+    """Generic GPIB instrument interface.
 
-    All verb methods follow the following convention unless otherwise specified:
-    the return value is True if all operations finished successfully without
-    exception, and False otherwise.
+    Attributes:
+    instrument: pyvisa.resources.GPIBInstrument object returned by
+                pyvisa.ResourceManager.get_resource
     """
 
-    # magnet inductance: 0.25 Henries
-    # charging voltage (from spec sheet): 0.09 Volts
-    # V = L dI/dt
-    DEFAULT_RAMPING_RATE = 0.36
+    def __init__(self, instrument_id):
+        """Get instrument by instrument_id from pyvisa ResourceManage."""
+        self.instrument = _instrument_manager.get_instrument(instrument_id)
 
-    DEFAULT_SAMPLING_INTERVAL = 0.1
+    def ask(self, command, convert=None,
+            tries=3, wait=0.5, exponential_backoff=True):
+        """Ask, and raise an exception only after a certain number of tries.
 
-    def __init__(self, sampling_interval=DEFAULT_SAMPLING_INTERVAL):
-        self.instrument = _programmer
+        Arguments:
+        command: command to ask, unicode (python2) or str (python3)
+        convert: convert function for the return value, e.g., int or float;
+                 defaults to None
+        tries: number of tries, defaults to 3
+        wait: wait time (in seconds) between tries, defaults to 0.5; will be
+              doubled each time is exponential_backoff is True
+        exponential_backoff: whether or not to double wait time between
+                             consecutive tries; defaults to True
+        """
+        for _ in range(0, tries):
+            try:
+                result = self.instrument.ask(command)
+                if convert is not None:
+                    result = convert(result)
+                return result
+            except Exception as err:
+                warnings.warn("command '%s' failed with exception:\n%s" %\
+                              (command, str(err)))
+                time.sleep(wait)
+                if exponential_backoff:
+                    wait *= 2
+
+        # max number of tries reached
+        raise RuntimeError("ask '%s' failed after %d tries" %\
+                           (command, tries))
+
+    def write(self, command, tries=3, wait=0.5, exponential_backoff=True):
+        """Write, and raise an exception only after a certain number of tries.
+
+        See 'ask' for arguments.
+        """
+        for _ in range(0, tries):
+            try:
+                self.instrument.write(command)
+                return
+            except Exception as err:
+                warnings.warn("command '%s' failed with exception:\n%s" %\
+                              (command, str(err)))
+                time.sleep(wait)
+                if exponential_backoff:
+                    wait *= 2
+
+        # max number of tries reached
+        raise RuntimeError("write '%s' failed after %d tries" %\
+                           (command, tries))
+
+class PowerSupply(_GPIBInstrument):
+    """Remote interface to LakeShore Model 625 SC Magnet Power Supply.
+
+    Attributes:
+    data: a list of recorded data points, each data point being a dict with
+          'timestamp' and data type (e.g., 'current') as keys
+    last_recording: timestamp of the last data point recorded (time.time())
+    sampling_interval: minimum sampling interval used for data recording
+    """
+
+    _INSTRUMENT_ID = 'GPIB0::20::INSTR'
+
+    def __init__(self):
+        super(PowerSupply, self).__init__(self._INSTRUMENT_ID)
         self.data = []
         self.last_recording = 0
-        self.sampling_interval = sampling_interval
-
-    def initialize(self):
-        """Initialize the programmer."""
-        no_exception = True
-        no_exception &= self.lock()
-        return no_exception
-
-    def lock(self, console_message=None):
-        """Disable front panel control."""
-        try:
-            _programmer.write('SYSTem:REMote')
-            if console_message is not None:
-                sys.stderr.write(console_message)
-            return True
-        except:
-            warnings.warn("'SYSTem:REMote' failed")
-            return False
-
-    def unlock(self, console_message=None):
-        """Enable front panel control."""
-        try:
-            _programmer.write('SYSTem:LOCal')
-            if console_message is not None:
-                sys.stderr.write(console_message)
-            return True
-        except:
-            warnings.warn("'SYSTem:LOCal' failed")
-            return False
+        self.sampling_interval = 0.1
 
     def record_current(self, wait=False):
-        """Record current through the current shunt."""
+        """Record current in self.data."""
         try:
             if wait:
                 while (time.time() - self.last_recording <
                        self.sampling_interval):
                     pass
             timestamp = time.time()
-            current = float(_programmer.ask('CURRage:MAGnet?'))
+            current = self.get_current()
             self.data.append({'timestamp': timestamp, 'current': current})
             self.last_recording = timestamp
-            return True
-        except:
-            warnings.warn("failed to get current with 'CURRage:MAGnet?'")
-            return False
+        except RuntimeError:
+            warnings.warn('failed to record current')
 
-    def ramp_current(self, target_current, ramping_rate=DEFAULT_RAMPING_RATE,
-                     record_current=True,
-                     messenger=None,
-                     send_on_start=True, send_on_completion=False,
-                     send_on_interruption=True, send_on_ignored=True,
-                     console_message=None):
-        """Ramp current."""
-        try:
-            feedback = _programmer.write('CONFigure:CURRent:PROGram %f' \
-                                         % target_current)
-            target_current_remote = float(_programmer.ask('CURRent:PROGram?'))
-            assert abs(target_current - target_current_remote) <= 0.005
-            feedback = _programmer.write('CONFigure:RAMP:RATE:CURRent %f' \
-                                         % ramping_rate)
-            ramping_rate_remote = float(_programmer.ask('RAMP:RATE:CURRent?'))
-            assert abs(ramping_rate - ramping_rate_remote) <= 0.0005
-        except:
-            warnings.warn("failed to set target_current and ramping rate")
+    def set_magnetic_field_constant(self, value):
+        """Set the magnetic field constant of the magnet (in T/A)."""
+        float(value)
+        self.write('FLDS 0,%.4f' % value)
 
-        try:
-            feedback = _programmer.write('RAMP')
-            state = int(_programmer.ask('STATE?'))
-            assert state in {1, 2} # state should be RAMPING or HOLDING
-        except:
-            warnings.warn("failed to ramp")
+    def get_magnetic_field_constant(self):
+        """Get the magnetic field constant of the magnet (in T/A)."""
+        response = self.ask('FLDS?')
+        unit, value = tuple(response.split(','))
+        if unit == '0':
+            # already in T/A
+            return float(value)
+        else:
+            # in kG/A, 1 kG/A = 0.1 T/A
+            return float(value) * 0.1
 
-        if messenger is not None and send_on_start:
-            messenger.send('ramping started')
+    def set_limits(self, current, voltage, rate):
+        """Set the upper setting limits of the power supply.
 
-        while True:
-            # inspect current state
-            try:
-                state = int(_programmer.ask('STATE?'))
-            except:
-                warnings.warn("failed to get state with 'STATE?'")
-                return False
+        Arguments:
+        current: limit on output current
+        voltage: limit on compliance voltage
+        rate: limit on output current ramp rate
+        """
+        float(current)
+        float(voltage)
+        float(rate)
+        self.write('LIMIT %.4f,%.4f,%.4f' % (current, voltage, rate))
 
-            if state == 1:
-                # RAMPING to programmed current/field
-                pass
-            elif state == 2:
-                # HOLDING at the programmed current/field
-                # i.e., ramping completed
-                if messenger is not None and send_on_completion:
-                    messenger.send('ramping completed')
-                if console_message is not None:
-                    sys.stderr.write(console_message)
-                return True
-            else:
-                warnings.warn("programmer in wrong state %d" % state)
-                return False
+    def get_limits(self):
+        """Get the upper setting limits of the power supply.
 
-            # record current
-            if record_current:
-                self.record_current(wait=True)
+        Return value: a tuple of three floats, representing the limits on the
+        output current, the compliance voltage, and the ramp rate, respectively.
+        """
+        response = self.ask('LIMIT?')
+        return tuple([float(x) for x in response.split(',')])
 
-            # check messages
-            if messenger is not None and messenger.poll(self.sampling_interval / 2):
-                msg = messenger.recv()
-                if msg == 'interrupt':
-                    try:
-                        feedback = _programmer.write('PAUSE')
-                        state = int(_programmer.ask('STATE?'))
-                        assert state == 3 # state should be PAUSED
-                    except:
-                        warnings.warn('failed to interrupt')
-                        return False
-                    # successfully interrupted
-                    if messenger is not None and send_on_interruption:
-                        messenger.send('interrupted')
-                    return True
-                elif msg == 'lock':
-                    self.lock()
-                elif msg == 'unlock':
-                    self.unlock()
-                else:
-                    # ignore message
-                    if send_on_ignored:
-                        messenger.send('ramping in progress')
+    def lock(self):
+        """Lock out front panel operations and set code to 000."""
+        self.write('LOCK 1,000')
 
-class _PowerSupply(object):
-    """Wrapper around Agilent 6031A DC Power Supply's GPIB interface."""
+    def unlock(self):
+        """Unlock front panel."""
+        self.write('LOCK 0,000')
 
-    def __init__(self):
-        self.instrument = _power_supply
+    def enable_quench_detection(self, rate_limit=1.0):
+        """Enable quench detection.
 
-    def initialize(self):
-        """Initialize the programmer."""
-        pass
+        Arguments:
+        rate_limit: a quench will be detected when the output current attempts
+                    to change at a rate greater than rate_limit (in A/s);
+                    defaults to 1.0
+        """
+        float(rate_limit)
+        self.write('QNCH 1,%.4f' % rate_limit)
 
-class _LockIn(object):
-    #! check model number
-    """Wrapper around HP SR810 Lock-In Amplifier's GPIB interface."""
+    def set_ramp_rate(self, rate):
+        """Set the output current ramp rate."""
+        float(rate)
+        self.write('RATE %.4f' % rate)
 
-    def __init__(self):
-        self.instrument = _lock_in
+    def get_ramp_rate(self):
+        """Get the output current ramp rate."""
+        return self.ask('RATE?', convert=float)
+
+    def get_field(self):
+        """Get the calculated magnetic field (in T)."""
+        internal_unit = self.ask('FLDS?').split(',')[0]
+        value = self.ask('RDGF?', convert=float)
+        if internal_unit == '0':
+            # internal unit is T
+            return value
+        else:
+            # internal unit is G
+            return value / 10000
+
+    def get_current(self):
+        """Get the output current (in A)."""
+        return self.ask('RDGI?', convert=float)
+
+    def get_voltage(self):
+        """Get output voltage (in V)."""
+        return self.ask('RDGV?', convert=float)
+
+    def enable_ramp_segments(self):
+        """Enable ramp segments."""
+        self.write('RSEG 1')
+
+    def disable_ramp_segments(self):
+        """Disable ramp segments."""
+        self.write('RSEG 0')
+
+    def set_ramp_segments_params(self, params):
+        """Set ramp segments paramters.
+
+        Arguments:
+        params: a list of up to 5 tuples (CURRENT, RATE), indicating that the
+                ramp rate RATE should be used up to CURRENT
+        """
+        num_segments = len(params)
+        assert num_segments <= 5
+        for tup in params:
+            float(tup[0])
+            float(tup[1])
+        for i in range(0, num_segments):
+            segment_id = i + 1
+            current = params[i][0]
+            rate = params[i][1]
+            self.write('RSEGS %d,%.4f,%.4f' % (segment_id, current, rate))
+
+    def set_target_field(self, field):
+        """Set the field value (in T) that the output will ramp to."""
+        float(field)
+        internal_unit = self.ask('FLDS?').split(',')[0]
+        if internal_unit == '0':
+            # internal unit is T
+            self.write('SETF %.4g' % field)
+        else:
+            # internal unit is G
+            field *= 10000
+            self.write('SETF %.4g' % field)
+
+    def get_target_field(self):
+        """Get the field value (in T) that the output will ramp to."""
+        internal_unit = self.ask('FLDS?').split(',')[0]
+        value = self.ask('SETF?', convert=float)
+        if internal_unit == '0':
+            # internal unit is T
+            return value
+        else:
+            # internal unit is G
+            return value / 10000
+
+    def set_target_current(self, current):
+        """Set the current value (in A) that the output will ramp to."""
+        float(current)
+        assert 0.0 <= current <= 60.1
+        self.write('SETI %.4f' % current)
+
+    def get_target_current(self):
+        """Get the current value (in A) that the output will ramp to."""
+        return self.ask('SETI?', convert=float)
+
+    def set_compliance_voltage(self, voltage):
+        """Set the output compliance voltage (in V)."""
+        float(voltage)
+        assert 0.1 <= voltage <= 5.0
+        self.write('SETV %.4f' % voltage)
+
+    def get_compliance_voltage(self):
+        """Get the output compliance voltage (in V)."""
+        return self.ask('SETV?', convert=float)
+
+    def stop(self):
+        """Stop the output current ramp.
+
+        The ramp will stop within two seconds.
+
+        To restart, use set_target_current or set_target_field."""
+        self.write('STOP')
+
+class LockIn(_GPIBInstrument):
+
+    #! not yet implemented
+
+    _INSTRUMENT_ID = 'GPIB0::18::INSTR'
+
+    def __init__(self, instrument_id):
+        super(LockIn, self).__init__(self._INSTRUMENT_ID)
         self._data_chunks = []
-
-    def initialize(self):
-        """Initialize the lock-in."""
-        pass
-
-programmer = _Programmer()
-power_supply = _PowerSupply()
-lock_in = _LockIn()
