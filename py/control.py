@@ -3,7 +3,8 @@
 """GPIB instrument controller.
 
 Functions:
-ps_monitor_current: monitor and save current
+ps_monitor_current: monitor and save power supply output current
+li_monitor: monitor and save lock-in amplifier data points
 """
 
 from __future__ import division
@@ -47,7 +48,7 @@ def ps_monitor_current(power_supply, output=sys.stdout, print_to_console=True):
                              (data_point['timestamp'], data_point['current']))
             break
 
-def li_monitor_current(lock_in, sampling_rate, output=sys.stdout):
+def li_monitor(lock_in, sampling_rate, output=sys.stdout):
     """Monitor and save lock-in amplifier data points until keyboard interrupt.
 
     Use the lock-in's internal buffer. The buffer is refreshed after every 8000
@@ -98,11 +99,11 @@ def main():
         lock_in = gpib.LockIn()
         lock_in.initialize()
         if args.file is None:
-            li_monitor_current(lock_in, 8.0)
+            li_monitor(lock_in, 8.0)
         else:
             try:
                 with open(args.file, 'w') as output:
-                    li_monitor_current(lock_in, 8.0, output)
+                    li_monitor(lock_in, 8.0, output)
             except (IOError, OSError) as err:
                 sys.stderr.write(type(err).__name__ + ": " + str(err) + "\n")
                 sys.stderr.write("error: invalid output file\n")
