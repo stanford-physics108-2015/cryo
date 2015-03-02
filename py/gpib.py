@@ -81,7 +81,7 @@ class PowerSupply(_GPIBInstrument):
 
     Attributes:
     data: a list of recorded data points, each data point being a dict with
-          'timestamp' and data type (e.g., 'current') as keys
+          'timestamp' and data types (e.g., 'current') as keys
     last_recording: timestamp of the last data point recorded (time.time())
     sampling_interval: minimum sampling interval used for data recording
     """
@@ -102,7 +102,15 @@ class PowerSupply(_GPIBInstrument):
         self.sampling_interval = sampling_interval
 
     def record_current(self, wait=False):
-        """Record current in self.data."""
+        """Record current in self.data.
+
+        Return value is the measured current.
+
+        Arguments:
+        wait: boolean; if wait is True, data point will be recorded at least
+              one sample interval apart from the time of last recording (see
+              the sampling_interval and last_recording attributes)
+        """
         try:
             if wait:
                 while (time.time() - self.last_recording <
@@ -112,8 +120,10 @@ class PowerSupply(_GPIBInstrument):
             current = self.get_current()
             self.data.append({'timestamp': timestamp, 'current': current})
             self.last_recording = timestamp
+            return current
         except RuntimeError:
             warnings.warn('failed to record current')
+            return None
 
     def set_magnetic_field_constant(self, value):
         """Set the magnetic field constant of the magnet (in T/A)."""
