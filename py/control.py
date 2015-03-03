@@ -3,6 +3,9 @@
 """GPIB instrument controller.
 
 Functions:
+ps_initialize: initialize settings of the power supply
+ps_initialized: return an initialized instance of gpib.PowerSupply
+ps_ramp_to: ramp the output current of the power supply to a specified value
 ps_monitor_current: monitor and save power supply output current
 li_monitor: monitor and save lock-in amplifier data points
 """
@@ -15,6 +18,56 @@ import sys
 import time
 
 import gpib
+
+def ps_initialize(power_supply):
+    """Initialize settings of the power supply.
+
+    Arguments:
+    power_supply: gpib.PowerSupply instance
+
+    """
+    power_supply.set_limits(20.5, 5.0, 0.4)
+    power_supply.set_compliance_voltage(5.0)
+    power_supply.set_magnetic_field_constant(0.07377)
+    power_supply.enable_quench_detection()
+    power_supply.enable_ramp_segments()
+    ramp_segments = [
+        (6.8,  0.3), # rated current
+        (13.6, 0.2),
+        (20.4, 0.1),
+        (60.0, 0.0001)
+    ]
+    power_supply.set_ramp_segments_params(ramp_segments)
+
+def ps_initialized():
+    """Return an initialized instance of gpib.PowerSupply.
+
+    Initialization is done with ps_initialize.
+    """
+    try:
+        power_supply = gpib.PowerSupply()
+        idn = power_supply.instrument.ask('*IDN?')
+        assert idn == "LSCI,MODEL625,6251136,1.0/1.0\n\r"
+    except Exception:
+        sys.stderr.write("error: failed to get instrument\n")
+        return None
+
+    ps_initialize(power_supply)
+    return power_supply
+
+def ps_ramp_to(power_supply, current):
+    """Ramp the output current of the power supply to the specified value.
+
+    This function simply sets the target current of the power supply to the
+    specified value.
+
+    Arguments:
+    power_supply: gpib.PowerSupply instance
+    current: target current
+    """
+    float(current)
+    assert 0 <= current < 20.5
+    power_supply.set_target_current(current)
 
 def ps_monitor_current(power_supply, output=sys.stdout, print_to_console=True):
     """Monitor and save power supply output current until keyboard interrupt.
