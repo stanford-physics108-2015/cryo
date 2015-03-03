@@ -307,7 +307,7 @@ class LockIn(_GPIBInstrument):
     #               * sample_rate: see self._sample_rate;
     #               * data: a list of data points
 
-    _INSTRUMENT_ID = 'GPIB0::18::INSTR'
+    _INSTRUMENT_ID = 'GPIB0::8::INSTR'
 
     # sample rates
     AVAILABLE_SAMPLE_RATES = [0.0625, 0.125, 0.25, 0.5, 1.0, 2.0, 4.0, 8.0,
