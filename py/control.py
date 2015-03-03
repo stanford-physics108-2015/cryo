@@ -35,6 +35,7 @@ def ps_monitor_current(power_supply, output=sys.stdout, print_to_console=True):
                       True
 
     """
+    sys.stderr.write("beginning data collection\n")
     while True:
         try:
             current = power_supply.record_current(wait=True)
@@ -62,16 +63,18 @@ def li_monitor(lock_in, sampling_rate, output=sys.stdout):
                    sampling rate passed to gpib.LockIn.initialize
     output: file object for writing output; defaults to sys.stdout
     """
+    sys.stderr.write("beginning data collection\n")
     while True:
         try:
             lock_in.start_storage()
             time.sleep(8000 / sampling_rate)
             lock_in.retrieve_storage()
         except KeyboardInterrupt:
+            lock_in.retrieve_storage()
             sys.stderr.write("\ninterrupted\n")
             data = lock_in.data()
             for data_point in data:
-                output.write("%.4f,%.4f\n" %
+                output.write("%.4f,%.4E\n" %
                              (data_point['timestamp'], data_point['value']))
             break
 
