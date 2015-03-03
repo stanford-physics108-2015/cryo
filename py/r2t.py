@@ -24,10 +24,10 @@ Constants:
     TOLERANCE: tolerance of deviation from MIN_RESISTANCE and MAX_RESISTANCE
 """
 
-from __future__ import print_function as _print_function
+from __future__ import print_function
 
-import argparse as _argparse
-import math as _math
+import argparse
+import math
 
 ################################## CONSTANTS ###################################
 
@@ -83,7 +83,7 @@ def r2t(resistance):
         MAX_RESISTANCE + TOLERANCE, \
         "resistance %.3e is out of range" % resistance
 
-    z = _math.log(resistance, 10)
+    z = math.log(resistance, 10)
     if resistance >= _RANGE_LOWER_LIMIT1:
         return _chebychev_series(z, _ZL1, _ZU1, _A1)
     elif resistance >= _RANGE_LOWER_LIMIT2:
@@ -93,11 +93,15 @@ def r2t(resistance):
 
 ##################################### MAIN #####################################
 
-if __name__ == "__main__":
+def main():
+    """CLI interface."""
     description = 'Resistance to temperature (Lake Shore RX-202A).'
-    parser = _argparse.ArgumentParser(description=description)
+    parser = argparse.ArgumentParser(description=description)
     parser.add_argument('resistances', type=float, nargs='+',
-                        help='resistances in Ohms; multiple ones allowed')
+                        help='resistances in ohms; multiple values accepted')
     args = parser.parse_args()
     for resistance in args.resistances:
-        print("%.3e" % r2t(resistance))
+        print("%.3f" % r2t(resistance))
+
+if __name__ == "__main__":
+    main()
