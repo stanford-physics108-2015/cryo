@@ -16,17 +16,20 @@ mimic the behavior of a standard thermometer.
 
 In the end, the normalized resistance is fed into r2t to get the measured
 temperature.
+
+This module uses uncertainties (https://pypi.python.org/pypi/uncertainties/).
 """
 
 from __future__ import division
 from __future__ import print_function
 
 import argparse
+from uncertainties import ufloat, umath, unumpy
 
 from r2t import r2t
 
-V_EMS = 4000 # 4 millivolts, i.e., 4000 microvolts
-R_LARGE = 900000 # 900 kiloohms
+V_EMS = ufloat(4000,0) # 4 millivolts, i.e., 4000 microvolts, 0 uncertainty
+R_LARGE = ufloat(900000,0) # 900 kiloohms, 0 uncertainty
 
 # Resistance scaling factor to mimic a standard LakeShore RX-202A (with a
 # standard curve). The standard resistance at LHe temperature (4.2K) is 2929
