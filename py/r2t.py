@@ -28,7 +28,7 @@ This module uses uncertainties (https://pypi.python.org/pypi/uncertainties/).
 
 from __future__ import print_function
 
-from uncertainties import ufloat, umath, unumpy
+from uncertainties import ufloat, umath
 import argparse
 import math
 
@@ -87,7 +87,7 @@ def r2t(resistance):
         MAX_RESISTANCE + TOLERANCE, \
         "resistance %.3e is out of range" % resistance
 
-    z = unumpy.log(resistance, 10)
+    z = umath.log(resistance, 10)
     if resistance >= _RANGE_LOWER_LIMIT1:
         return _chebychev_series(z, _ZL1, _ZU1, _A1)
     elif resistance >= _RANGE_LOWER_LIMIT2:
