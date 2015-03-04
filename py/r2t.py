@@ -22,10 +22,13 @@ Constants:
     MAX_RESISTANCE: maximum resistance in the accepted range
 
     TOLERANCE: tolerance of deviation from MIN_RESISTANCE and MAX_RESISTANCE
+
+This module uses uncertainties (https://pypi.python.org/pypi/uncertainties/).
 """
 
 from __future__ import print_function
 
+from uncertainties import ufloat, umath, unumpy
 import argparse
 import math
 
@@ -61,7 +64,7 @@ _RANGE_LOWER_LIMIT3 = 2243.15
 def _chebychev_series(z, zl, zu, a):
     x = ((z - zl) - (zu - z)) / (zu - zl)
     tc = []
-    tc.append(1)
+    tc.append(ufloat(1,0))
     tc.append(x)
     t = a[0] + a[1] * x
     for i in range(2, len(a)):
@@ -70,7 +73,8 @@ def _chebychev_series(z, zl, zu, a):
     return t
 
 def r2t(resistance):
-    """Calculate temperature from resistance.
+    """Calculate temperature from resistance. Resistance must be of type
+    ufloat.
 
     The range of acceptable resistances is determined by constants
     MIN_RESISTANCE and MAX_RESISTANCE. To account for measurement errors, the
@@ -83,7 +87,7 @@ def r2t(resistance):
         MAX_RESISTANCE + TOLERANCE, \
         "resistance %.3e is out of range" % resistance
 
-    z = math.log(resistance, 10)
+    z = unumpy.log(resistance, 10)
     if resistance >= _RANGE_LOWER_LIMIT1:
         return _chebychev_series(z, _ZL1, _ZU1, _A1)
     elif resistance >= _RANGE_LOWER_LIMIT2:
@@ -101,7 +105,7 @@ def main():
                         help='resistances in ohms; multiple values accepted')
     args = parser.parse_args()
     for resistance in args.resistances:
-        print("%.3f" % r2t(resistance))
+        print("{:.5g}".format(r2t(resistance)))
 
 if __name__ == "__main__":
     main()
