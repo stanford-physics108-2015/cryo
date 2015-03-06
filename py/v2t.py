@@ -25,7 +25,7 @@ import argparse
 
 from r2t import r2t
 
-V_EMS = 0.004 # 4 millivolts, i.e., 4000 microvolts
+V_EMS = 0.004 # 4 millivolts
 R_LARGE = 900000 # 900 kiloohms
 
 # Resistance scaling factor to mimic a standard LakeShore RX-202A (with a
@@ -53,8 +53,9 @@ def v2t(v_therm):
     """Compute temperature from the measured voltage across the thermometer.
 
     Arguments:
-    v_therm: EMS voltage (in *microvolts*) across the thermometer measured by
-             the lock-in amplifier
+
+    v_therm: EMS voltage (in *volts*) across the thermometer measured by the
+             lock-in amplifier
     """
     r_therm = v2r(v_therm)
     r_therm_std = r_therm * SCALING_FACTOR
@@ -65,7 +66,7 @@ def main():
     description = 'Compute temperature from voltage across the thermometer.'
     parser = argparse.ArgumentParser(description=description)
     parser.add_argument('voltages', type=float, nargs='+',
-                        help='voltages in microvolts; multiple values accepted')
+                        help='voltages in volts; multiple values accepted')
     args = parser.parse_args()
     for voltage in args.voltages:
         print("%.3f" % v2t(voltage))
