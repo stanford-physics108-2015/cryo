@@ -101,7 +101,7 @@ class PowerSupply(_GPIBInstrument):
         self.last_recording = 0
         self.sampling_interval = sampling_interval
 
-    def record_current(self, wait=False):
+    def record_current(self, wait=False, raise_exception=False):
         """Record current in self.data.
 
         Return value is the measured current.
@@ -110,6 +110,8 @@ class PowerSupply(_GPIBInstrument):
         wait: boolean; if wait is True, data point will be recorded at least
               one sample interval apart from the time of last recording (see
               the sampling_interval and last_recording attributes)
+        raise_exception: boolean; if raise_exception is True, raise RuntimeError
+                         if recording failed
         """
         try:
             if wait:
@@ -123,6 +125,8 @@ class PowerSupply(_GPIBInstrument):
             return current
         except RuntimeError:
             warnings.warn('failed to record current')
+            if raise_exception:
+                raise
             return None
 
     def set_magnetic_field_constant(self, value):
@@ -311,7 +315,7 @@ class LockIn(_GPIBInstrument):
         self.last_recording = 0
         self.sampling_interval = sampling_interval
 
-    def record_value(self, wait=False):
+    def record_value(self, wait=False, raise_exception=False):
         """Record data point in self.data.
 
         Return value is the value on Channel 1 display (returned by get_value).
@@ -320,6 +324,8 @@ class LockIn(_GPIBInstrument):
         wait: boolean; if wait is True, data point will be recorded at least
               one sample interval apart from the time of last recording (see
               the sampling_interval and last_recording attributes)
+        raise_exception: boolean; if raise_exception is True, raise RuntimeError
+                         if recording failed
         """
         try:
             if wait:
@@ -332,7 +338,9 @@ class LockIn(_GPIBInstrument):
             self.last_recording = timestamp
             return value
         except RuntimeError:
-            warnings.warn('failed to record current')
+            warnings.warn('failed to record value')
+            if raise_exception:
+                raise
             return None
 
     def get_value(self):

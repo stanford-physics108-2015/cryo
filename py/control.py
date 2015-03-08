@@ -91,16 +91,20 @@ def ps_monitor_current(power_supply, output=sys.stdout, print_to_console=True):
     sys.stderr.write("beginning data collection\n")
     while True:
         try:
-            current = power_supply.record_current(wait=True)
+            current = power_supply.record_current(wait=True,
+                                                  raise_exception=True)
             if print_to_console and current is not None:
-                sys.stderr.write("\rcurrent: %7.4f A" % current)
+                sys.stderr.write("current: %7.4f A\r" % current)
                 sys.stderr.flush()
+        except RuntimeError:
+            sys.stderr.write("\nlost contact with the instrument\n")
+            break
         except KeyboardInterrupt:
             sys.stderr.write("\ninterrupted\n")
-            for data_point in power_supply.data:
-                output.write("%.4f,%.4f\n" %
-                             (data_point['timestamp'], data_point['current']))
             break
+    for data_point in power_supply.data:
+        output.write("%.4f,%.4f\n" %
+                     (data_point['timestamp'], data_point['current']))
 
 def li_monitor(lock_in, output=sys.stdout, print_to_console=True):
     """Monitor and save lock-in amplifier data points until keyboard interrupt.
@@ -115,24 +119,26 @@ def li_monitor(lock_in, output=sys.stdout, print_to_console=True):
     sys.stderr.write("beginning data collection\n")
     while True:
         try:
-            voltage = lock_in.record_value(wait=True)
+            voltage = lock_in.record_value(wait=True, raise_exception=True)
             if print_to_console and voltage is not None:
                 try:
                     temperature = v2t.v2t(voltage)
-                    status = "\rvoltage: %8.3f uV    temperature: %7.3f K   "\
+                    status = "voltage: %8.3f uV    temperature: %7.3f K   \r"\
                              % (voltage * 1E6, temperature)
                     sys.stderr.write(status)
                 except AssertionError:
-                    status = "\rvoltage: %8.3f uV    temperature: out of range"\
+                    status = "voltage: %8.3f uV    temperature: out of range\r"\
                              % (voltage * 1E6)
                     sys.stderr.write(status)
-
+        except RuntimeError:
+            sys.stderr.write("\nlost contact with the instrument\n")
+            break
         except KeyboardInterrupt:
             sys.stderr.write("\ninterrupted\n")
-            for data_point in lock_in.data:
-                output.write("%.4f,%.4E\n" %
-                             (data_point['timestamp'], data_point['value']))
             break
+    for data_point in lock_in.data:
+        output.write("%.4f,%.4E\n" %
+                     (data_point['timestamp'], data_point['value']))
 
 def main():
     """CLI interface."""
