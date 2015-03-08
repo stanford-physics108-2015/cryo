@@ -18,6 +18,7 @@ import sys
 import time
 
 import gpib
+import v2t
 
 def ps_initialize(power_supply):
     """Initialize settings of the power supply.
@@ -32,7 +33,7 @@ def ps_initialize(power_supply):
     power_supply.enable_quench_detection()
     power_supply.enable_ramp_segments()
     ramp_segments = [
-        (6.8,  0.3), # rated current
+        (6.8, 0.3), # rated current
         (13.6, 0.2),
         (20.4, 0.1),
         (60.0, 0.0001)
@@ -86,14 +87,13 @@ def ps_monitor_current(power_supply, output=sys.stdout, print_to_console=True):
     output: file object for writing output; defaults to sys.stdout
     print_to_console: if True, print to stderr in addtion to saving; defaults to
                       True
-
     """
     sys.stderr.write("beginning data collection\n")
     while True:
         try:
             current = power_supply.record_current(wait=True)
             if print_to_console and current is not None:
-                sys.stderr.write("\rcurrent: %7.4f" % current)
+                sys.stderr.write("\rcurrent: %7.4f A" % current)
                 sys.stderr.flush()
         except KeyboardInterrupt:
             sys.stderr.write("\ninterrupted\n")
@@ -102,31 +102,34 @@ def ps_monitor_current(power_supply, output=sys.stdout, print_to_console=True):
                              (data_point['timestamp'], data_point['current']))
             break
 
-def li_monitor(lock_in, sampling_rate, output=sys.stdout):
+def li_monitor(lock_in, output=sys.stdout, print_to_console=True):
     """Monitor and save lock-in amplifier data points until keyboard interrupt.
-
-    Use the lock-in's internal buffer. The buffer is refreshed after every 8000
-    data points. Data points are saved internally to the lock_in object, and
-    dumped to the output file when keyboard interrupt is encountered.
 
     Arguments:
     lock_in: gpib.LockIn instance; must be initialized with the
              gpib.LockIn.initialize method
-    sampling_rate: sampling rate of the lock-in amplifier; should match the
-                   sampling rate passed to gpib.LockIn.initialize
     output: file object for writing output; defaults to sys.stdout
+    print_to_console: if True, print to stderr in addtion to saving; defaults to
+                      True
     """
     sys.stderr.write("beginning data collection\n")
     while True:
         try:
-            lock_in.start_storage()
-            time.sleep(8000 / sampling_rate)
-            lock_in.retrieve_storage()
+            voltage = lock_in.record_value(wait=True)
+            if print_to_console and voltage is not None:
+                try:
+                    temperature = v2t.v2t(voltage)
+                    status = "\rvoltage: %8.3f uV    temperature: %7.3f K   "\
+                             % (voltage * 1E6, temperature)
+                    sys.stderr.write(status)
+                except AssertionError:
+                    status = "\rvoltage: %8.3f uV    temperature: out of range"\
+                             % (voltage * 1E6)
+                    sys.stderr.write(status)
+
         except KeyboardInterrupt:
-            lock_in.retrieve_storage()
             sys.stderr.write("\ninterrupted\n")
-            data = lock_in.data()
-            for data_point in data:
+            for data_point in lock_in.data:
                 output.write("%.4f,%.4E\n" %
                              (data_point['timestamp'], data_point['value']))
             break
@@ -153,13 +156,12 @@ def main():
                 sys.stderr.write("error: invalid output file\n")
     elif args.action == 'monitor-lock-in':
         lock_in = gpib.LockIn()
-        lock_in.initialize()
         if args.file is None:
-            li_monitor(lock_in, 8.0)
+            li_monitor(lock_in)
         else:
             try:
                 with open(args.file, 'w') as output:
-                    li_monitor(lock_in, 8.0, output)
+                    li_monitor(lock_in, output)
             except (IOError, OSError) as err:
                 sys.stderr.write(type(err).__name__ + ": " + str(err) + "\n")
                 sys.stderr.write("error: invalid output file\n")
