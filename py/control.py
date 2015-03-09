@@ -93,7 +93,7 @@ def ps_monitor_current(power_supply, output=sys.stdout, print_to_console=True):
         try:
             current = power_supply.record_current(wait=True,
                                                   raise_exception=True)
-            if print_to_console and current is not None:
+            if print_to_console:
                 sys.stderr.write("current: %7.4f A\r" % current)
                 sys.stderr.flush()
         except RuntimeError:
@@ -120,16 +120,18 @@ def li_monitor(lock_in, output=sys.stdout, print_to_console=True):
     while True:
         try:
             voltage = lock_in.record_value(wait=True, raise_exception=True)
-            if print_to_console and voltage is not None:
+            resistance = v2t.v2r(voltage)
+            if print_to_console:
+                voltage_str = "%6.3f uV" % (voltage * 1E6)
+                resistance_str = u"%6.1f \u03A9" % resistance
                 try:
                     temperature = v2t.v2t(voltage)
-                    status = "voltage: %8.3f uV    temperature: %7.3f K   \r"\
-                             % (voltage * 1E6, temperature)
-                    sys.stderr.write(status)
+                    temperature_str = "%6.3f K" % temperature
                 except AssertionError:
-                    status = "voltage: %8.3f uV    temperature: out of range\r"\
-                             % (voltage * 1E6)
-                    sys.stderr.write(status)
+                    temperature_str = "out of range"
+                status = "voltage: %-16sresistance: %-16stemperature: %-16s\r" \
+                         % (voltage_str, resistance_str, temperature_str)
+                sys.stderr.write(status)
         except RuntimeError:
             sys.stderr.write("\nlost contact with the instrument\n")
             break
