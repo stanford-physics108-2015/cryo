@@ -25,8 +25,8 @@ import argparse
 
 from r2t import r2t
 
-V_EMS = 0.004 # 4 millivolts
-R_LARGE = 900000 # 900 kiloohms
+V_EMS = 1E-2
+R_LARGE = 1.5E6
 
 # Resistance scaling factor to mimic a standard LakeShore RX-202A (with a
 # standard curve). The standard resistance at LHe temperature (4.2K) is 2929
