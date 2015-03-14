@@ -38,6 +38,37 @@ def time_slice(x, slice):
 	index2 = np.array(x).searchsorted(slice[1])
 	return index1, index2
 
+def find_ramp(t, c):
+	slice = None
+	next = False
+	c0 = c[0]
+	for i in range(len(c)):
+		if np.abs(c0-c[i])>0.01:
+			slice = (i,i)
+			next = True
+			break
+	if next:
+		for j in range(len(c[i:])):
+			if np.abs(c[i+j+1]-c[i+j])/(t[i+j+1]-t[i+j])<0.1:
+				slice = (i, i+j)
+				break
+	if slice:
+		ramp = (c[slice[1]]-c[slice[0]])/(t[slice[1]]-t[slice[0]])
+		return ramp, slice
+	else:
+		return None, None
+
+def ramp_rates(psfilename):
+	t, c = readfile(psfilename)
+	ramps = []
+	ramp, slice = find_ramp(t, c)
+	while ramp:
+		ramps.append( (ramp, slice) )
+		ramp, new = find_ramp(t[slice[1]:], c[slice[1]:])
+		if new:
+			slice = (slice[1]+new[0], slice[1]+new[1])
+	return ramps
+
 def plotdata(lockinfilename, psfilename, title='Adiabatic Demagnetization', slice=None):
 	timet, temp = data(lockinfilename, 'lockin')
 	timef, field = data(psfilename, 'ps')
@@ -65,4 +96,4 @@ def plotdata(lockinfilename, psfilename, title='Adiabatic Demagnetization', slic
 
 datadir = "/Users/rex/Dropbox/Physics 108/data"
 # example plot
-plotdata('%s/lock-in-1426122746.log'%datadir, '%s/power-supply-1426122742.log'%datadir, slice=(840,980))
+# plotdata('%s/lock-in-1426122746.log'%datadir, '%s/power-supply-1426122742.log'%datadir, slice=(840,980))
